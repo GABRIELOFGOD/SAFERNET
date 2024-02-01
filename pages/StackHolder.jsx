@@ -13,8 +13,8 @@ const StackHolder = () => {
       </div>
       <div className="md:flex py-6 md:py-12 bg-secondary flex-row-reverse">
         <div className="md:w-[60%] px-6 md:px-20 font-semibold flex flex-col my-auto gap-10 text-primary">
-          <p>The Nigeria Image-Based Sexual Abuse Stakeholder Workshop is dedicated to developing a collaborative and multi-stakeholder approach to reducing digital harms as a major barrier faced by girls and women, curtailing their use of digital technologies and broader participation in online spaces.</p>
-          <p>The 1st edition was held in Lagos, Nigeria from Tuesday, July 18 to Thursday, July 20, 2023, with a total of 61 stakeholders across government, the private sector, civil society organizations, law enforcement, and the media.</p>
+          <p>The Nigeria Image-Based Sexual Abuse Stakeholder Workshop is committed to forging a collaborative and multi-stakeholder approach to mitigating digital harms, a significant impediment faced by girls and women. This initiative aims to address the challenges that restrict their use of digital technologies and hinder broader participation in online spaces.</p>
+          <p>The inaugural edition took place in Lagos, Nigeria, spanning from Tuesday, July 18, to Thursday, July 20, 2023. The event witnessed the active participation of 61 stakeholders representing various sectors, including government, the private sector, civil society organizations, law enforcement, and the media.</p>
         </div>
         <div className='md:w-[40%] mt-6 md:mt-0 px-20 md:px-32'>
           <img className='w-fit mx-auto' src={followHero} alt="heroe image" />

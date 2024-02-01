@@ -4,20 +4,20 @@ import { FaTwitter } from "react-icons/fa";
 export const missionCard = [
     {
         id: 1,
-        title: 'Advancing Digital Safety for Children',
-        body: 'Awareness, Education, Network Building and Policy Engagement on Online Safety.',
+        title: 'Promoting Enhanced Digital Safety for Children',
+        body: 'Fostering Awareness, Educational Initiatives, Building Networks, and Engaging in Policy Advocacy for Online Safety.',
         image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561651/safernet/card1_vli2x8.jpg'
     },
     {
         id: 2,
-        title: 'Fostering Women and Girls\' Digital Rights',
-        body: 'Building Capacity to address women\'s rights online as a core concern for their social and political empowerment, working on reducing online violence against women and girls',
+        title: 'Empowering Digital Rights for Women and Girls',
+        body: 'Enhancing Capacity to Address Women\'s Online Rights as a Fundamental Aspect of Social and Political Empowerment, and Efforts to Mitigate Online Violence Targeting Women and Girls.',
         image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561650/safernet/card2_ruaaq3.png'
     },
     {
         id: 3,
-        title: 'Reducing Digital Inequalities',
-        body: 'Public policy engagement to reduce gender-gap in internet access and use.',
+        title: 'Mitigating Disparities in the Digital Sphere',
+        body: 'Engaging in Public Policy for Narrowing the Gender Gap in Internet Access and Utilization.',
         image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561653/safernet/card3_cldwjh.jpg'
     }
 ]
@@ -81,23 +81,23 @@ export const quickLinks = [
 export const whatWeDo = [
     {
         id: 1,
-        title: 'Advocacy',
-        text: 'We tirelessly advocate for the development and implementation of robust trust and safety policies and standards. We work closely with policymakers to ensure that the legal landscape protects the rights and well-being of children and women online.'
+        title: 'Promoting and Championing for Change',
+        text: 'We tirelessly champion the formulation and implementation of robust trust and safety policies and standards. Our close collaboration with policymakers is geared towards ensuring that the legal landscape effectively safeguards the rights and well-being of children and women online.'
     },
     {
         id: 2,
-        title: 'Awareness and Education',
-        text: 'We believe that knowledge is power. We develop and disseminate educational resources, campaigns, and workshops to equip children, women, and their families with the skills needed to navigate the digital world safely.'
+        title: 'Promoting Awareness and Providing Education',
+        text: 'We uphold the belief that knowledge is power. To empower children, women, and their families in navigating the digital world safely, we create and disseminate educational resources, campaigns, and workshops aimed at providing essential skills.'
     },
     {
         id: 3,
-        title: 'Collaboration',
-        text: 'Building safer digital spaces requires a collective effort. We collaborate with tech companies, NGOs, law enforcement agencies, and concerned citizens to develop and implement effective solutions.'
+        title: 'Fostering Collaboration for Safer Digital Spaces',
+        text: 'Creating secure digital spaces necessitates a collective endeavor. We actively collaborate with tech companies, NGOs, law enforcement agencies, and concerned citizens to co-create and implement effective solutions.'
     },
     {
         id: 4,
-        title: 'Research and Innovation',
-        text: 'We stay at the forefront of technology and policy trends, conducting or supporting research to identify emerging threats and opportunities in the digital landscape. We use this knowledge to shape policies and practices that protect the interests of our target demographic.'
+        title: 'Pioneering Research and Innovations for Online Safety',
+        text: 'Remaining at the forefront of technology and policy trends, we conduct or support research to identify emerging threats and opportunities in the digital landscape. This knowledge is harnessed to shape policies and practices that safeguard the interests of our target demographic.'
     }
 ]
 
@@ -105,22 +105,22 @@ export const whyChooseUs = [
     {
         id: 1,
         title: 'Expertise',
-        text: 'Our team demonstrates regional expertise and a deep understanding of the challenges and opportunities in the digital space.'
+        text: 'Our team exhibits regional expertise and possesses a profound understanding of the challenges and opportunities prevalent in the digital space.'
     },
     {
         id: 2,
         title: 'Dedication',
-        text: 'We are unwavering in our commitment to safeguarding children and women online. Our passion drives us to go the extra mile.'
+        text: 'Our commitment to safeguarding children and women online is unwavering. Fueled by passion, we go the extra mile in our efforts.'
     },
     {
         id: 3,
         title: 'Collaboration',
-        text: 'We understand that solving complex problems requires a collaborative approach. We work with diverse stakeholders to create comprehensive solutions.'
+        text: 'Recognizing that solving complex problems demands a collaborative approach, we actively engage with diverse stakeholders to develop comprehensive solutions.'
     },
     {
         id: 4,
         title: 'Impact',
-        text: 'Our work directly impacts the lives of those who need it most. We measure success by the tangible improvements in online safety for children and women.'
+        text: 'Our efforts have a direct impact on the lives of those who need it most. Success, for us, is measured by the tangible improvements in online safety for children and women.'
     }
 ]
 
@@ -128,27 +128,27 @@ export const news = [
     {
         id: 1,
         linkTo: '',
-        text: 'NGO, Meta seek ways to prevent internet-based sexual abuse',
+        text: 'Non-Governmental Organization (NGO) Collaborates with Meta to Explore Strategies for Preventing Internet-Based Sexual Abuse',
         background: 'bg-white',
         textColor: 'text-black'
     },
     {
         id: 2,
         linkTo: '',
-        text: 'How to stop online violence against children, women — Group',
+        text: 'Strategies for Combating Online Violence Against Children and Women - Advocacy Group\'s Insights',
         background: 'bg-greener'
     },
     {
         id: 3,
         linkTo: '',
-        text: 'TechSocietal Hosts Online Safety Workshop to Strengthen Digital Protection for Women and Children',
+        text: 'Safernet Organizes Workshop on Online Safety to Enhance Digital Protection for Women and Children',
         background: 'bg-white',
         textColor: 'text-black'
     },
     {
         id: 4,
         linkTo: '',
-        text: 'Sexual Abuse In Nigeria: Activists Call For Advanced Online Safety For Women & Children | NC Now',
+        text: 'Addressing Sexual Abuse in Nigeria: Activists Advocate for Enhanced Online Safety Measures for Women and Children | NC Now',
         background: 'bg-greener'
     }
 ]
@@ -157,19 +157,19 @@ export const campaign = [
     {
         id: 1,
         image: '../public/svgs/guardian.svg',
-        topic: 'Guardians of the Net: Crush Image-Based Sexual Abuse!',
+        topic: 'Protectors of the Digital Realm: Combating Image-Based Sexual Abuse!',
         path: ''
     },
     {
         id: 2,
         image: '../public/svgs/uniting.svg',
-        topic: 'Uniting Forces Against Online Abuse: Let\'s Crush Image-Based Sexual Abuse!',
+        topic: 'Joining Hands to Confront Online Abuse: Let\'s Eradicate Image-Based Sexual Abuse!',
         path: ''
     },
     {
         id: 3,
         image: '../public/svgs/women.svg',
-        topic: 'Women and Girls’ Rights Online in Nigeria',
+        topic: 'Digital Rights of Women and Girls in Nigeria',
         path: ''
     }
 ]
@@ -233,7 +233,38 @@ export const blog = [
     }
 ]
 
+export const theNews = [
+    {
+        id: 1,
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706613006/safernet/bl0ha14iypbfr8wyy2v8_rpmhyx.jpg',
+        path: '',
+        topic: 'Addressing Sexual Abuse in Nigeria: Activists Advocate for Enhanced Online Safety Measures for Women and Children | NC Now'
+    },
+    {
+        id: 2,
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561599/safernet/homeHero_jcsock.png',
+        path: '',
+        topic: 'Non-Governmental Organization (NGO) Collaborates with Meta to Explore Strategies for Preventing Internet-Based Sexual Abuse'
+    },
+    {
+        id: 3,
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706781215/safernet/violence_rgvbd8.jpg',
+        path: '',
+        topic: 'Strategies for Combating Online Violence Against Children and Women - Advocacy Group\'s Insights'
+    },
+    {
+        id: 4,
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561599/safernet/homeHero_jcsock.png',
+        path: '',
+        topic: 'Safernet Organizes Workshop on Online Safety to Enhance Digital Protection for Women and Children'
+    }
+]
 
-
-
+// export const contacts = [
+//     {
+//         id: 1,
+//         icon: '',
+//         information: ''
+//     }
+// ]
 
