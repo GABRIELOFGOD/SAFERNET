@@ -10,7 +10,10 @@ const WhoWhat = () => {
         <div className="md:px-20 flex flex-col gap-12">
             <div>
                 <p className="text-4xl text-primary mb-5 font-bold">Who We Are</p>
-                <p className=''>We constitute a devoted team of experts, activists, and enthusiasts bound together by a collective dedication to making the internet a safer space. Our diverse backgrounds span technology, law, psychology, and education, providing us with a comprehensive perspective on the intricate challenges related to online safety. By synergizing our skills, knowledge, and passion, we strive to propel positive change in the digital realm.</p>
+                <div className='flex flex-col gap-2'>
+                    <p>We constitute a devoted team of experts, activists, and enthusiasts bound together by a collective dedication to making the internet a safer space.</p>
+                    <p>Our diverse backgrounds span technology, law, psychology, and education, providing us with a comprehensive perspective on the intricate challenges related to online safety. By synergizing our skills, knowledge, and passion, we strive to propel positive change in the digital realm.</p>
+                </div>
             </div>
             <div>
                 <p className="text-4xl text-primary mb-5 font-bold">What We Do</p>
