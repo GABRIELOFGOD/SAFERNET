@@ -17,8 +17,8 @@ const About = () => {
           <p className='text-4xl pb-6 font-bold'>Ensuring the Security of Digital Environments for Children and Women</p>
           <p>Welcome to Safernet, where the assurance of trust and safety for children and women online transcends being merely a mission—it stands as our steadfast commitment. We are wholeheartedly devoted to shaping a digital world that is safer and more secure, particularly for the most vulnerable members of our society. Our path is fueled by a fervent dedication to guarantee that every child and woman can traverse the digital realm devoid of fear, harassment, or exploitation.</p>
           <div className="flex uppercase">
-            <button className='p-3 my-5 uppercase bg-button font-semibold text-[12px]'>donate now</button>
-            <button className='p-3 my-5 mx-3 uppercase bg-greener font-semibold text-[12px]'>get involved</button>
+            <button className='p-3 my-5 text-white uppercase bg-button font-semibold text-[12px]'>donate now</button>
+            <button className='p-3 my-5 text-white mx-3 uppercase bg-greener font-semibold text-[12px]'>get involved</button>
           </div>
         </div>
         <div className='flex py-24 px-12'>
