@@ -10,4 +10,4 @@ const TheNews = ({text, textColor, background, linkTo}) => {
   )
 }
 
-export default TheNews
+export default TheNews;

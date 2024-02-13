@@ -13,6 +13,8 @@ import Events from '../pages/Events'
 import GetInvolved from '../pages/GetInvolved'
 import Contact from '../pages/Contact'
 import Loader from '../components/Loader'
+import { CreateUserContext } from '../utils/Context'
+import NotFound from '../pages/NotFound'
 const LazyHome = lazy(() => import('../pages/Home'))
 const LazyAbout = lazy(() => import('../pages/About'))
 const LazyStake = lazy(() => import('../pages/StackHolder'))
@@ -21,6 +23,11 @@ const LazyBlog = lazy(() => import('../pages/Blog'))
 const LazyNews = lazy(() => import('../pages/News'))
 const LazyPublication = lazy(() => import('../pages/Publications'))
 const LazyContact = lazy(() => import('../pages/Contact'))
+const LazyLogin = lazy(() => import('../pages/Login'))
+const LazyDashboard = lazy(() => import('../pages/Dashboard'))
+const LazyAdminBlog = lazy(() => import('../pages/AdminBlog'))
+const LazyAdminCampaign = lazy(() => import('../pages/AdminCampaign'))
+const LazyAdminEvent = lazy(() => import('../pages/AdminEvent'))
 
 const router = createBrowserRouter([
   {
@@ -64,7 +71,7 @@ const router = createBrowserRouter([
         element: <Events />
       },
       {
-        path: 'get-involved',
+        path: 'make-report',
         element: <GetInvolved />
       },
       {
@@ -72,13 +79,42 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}><LazyContact /></Suspense>
       }
     ]
+  },
+  {
+    path: '/admin/login',
+    element: <Suspense fallback={<Loader />}><LazyLogin /></Suspense>,
+    // children={}
+  },
+  {
+    path: 'dashboard',
+    element: <Suspense fallback={<Loader />}><LazyDashboard /></Suspense>,
+    children: [
+      {
+        path: 'blog',
+        element: <Suspense fallback={<Loader />}><LazyAdminBlog /></Suspense>
+      },
+      {
+        path: 'event',
+        element: <Suspense fallback={<Loader />}><LazyAdminEvent /></Suspense>
+      },
+      {
+        path: 'campaign',
+        element: <Suspense fallback={<Loader />}><LazyAdminCampaign /></Suspense>
+      }
+    ]
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
 ])
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <CreateUserContext>
+      <RouterProvider router={router} />
+    </CreateUserContext>
   )
 }
 
-export default App
+export default App;

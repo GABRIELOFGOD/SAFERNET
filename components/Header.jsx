@@ -33,7 +33,28 @@ const Header = () => {
       <ul className={`md:flex activa duration-300 text-white md:text-black md:top-0 md:w-fit w-full left-0 md:py-0 py-5 absolute md:relative gap-3 my-auto ${navShow ? 'top-[80px] bg-primary' : 'top-[-500px]'}`}>
         <li onClick={closeNav} className='w-full my-auto md:w-fit'><NavLink to='about' className='hover:bg-button text-[12px] p-3 hover:text-white font-bold rounded-sm duration-300'>about us</NavLink></li>
         <li><ListItems
-          title='crush #imbs'
+          title='updates'
+          lists={[
+            {
+              id: 1,
+              text: 'videos',
+              // path: ''
+            },
+            {
+              id: 2,
+              text: 'news',
+              path: 'news'
+            },
+            {
+              id: 3,
+              text: 'events',
+              path: 'events'
+            }
+          ]}
+        /></li>
+        <li onClick={closeNav} className='my-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='contact'>contact us</NavLink></li>
+        <li><ListItems
+          title='#EndIMBS'
           lists={lists}
         /></li>
         <li><ListItems
@@ -51,28 +72,7 @@ const Header = () => {
             }
           ]}
         /></li>
-        <li><ListItems
-          title='updates'
-          lists={[
-            {
-              id: 1,
-              text: 'videos',
-              path: 'videos'
-            },
-            {
-              id: 2,
-              text: 'news',
-              path: 'news'
-            },
-            {
-              id: 3,
-              text: 'events',
-              path: 'events'
-            }
-          ]}
-        /></li>
-        <li onClick={closeNav} className='my-auto mb-4 md:mb-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='get-involved'>get involved</NavLink></li>
-        <li onClick={closeNav} className='my-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='contact'>contact us</NavLink></li>
+        <li onClick={closeNav} className='my-auto mb-4 md:mb-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='make-report'>make a report</NavLink></li>
       </ul>
       <div onClick={toggleNav} className='my-auto text-2xl flex md:hidden p-2 rounded-md border border-primary hover:text-white hover:bg-primary cursor-pointer duration-300'>{navShow ? <IoCloseSharp /> : <HiMenuAlt3 />}</div>
     </div>

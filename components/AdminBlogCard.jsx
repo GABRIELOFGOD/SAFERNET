@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BlogCard = ({image, topic, content, author}) => {
+const AdminBlogCard = ({image, topic, content, author}) => {
   return (
     <div className='md:w-[300px] mb-5'>
         {image && <img src={image} alt="blog image" />}
@@ -13,4 +13,4 @@ const BlogCard = ({image, topic, content, author}) => {
   )
 }
 
-export default BlogCard
+export default AdminBlogCard

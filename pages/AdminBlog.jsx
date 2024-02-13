@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import BlogCard from '../components/BlogCard'
-import { Link } from 'react-router-dom'
 import { ContextUser } from '../utils/Context'
+import BlogCard from '../components/BlogCard'
+import { Link } from 'react-router-dom';
+import AdminBlogCard from '../components/AdminBlogCard';
 
-const Blog = () => {
+const AdminBlog = () => {
   const { viewBlog, blogs } = ContextUser();
 
   useEffect(() => {
@@ -11,25 +12,10 @@ const Blog = () => {
   }, [])
 
   return (
-    <div className='md:px-32 p-6 md:py-12 bg-secondary'>
-      {/* <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
-      <div className='md:flex gap-5 flex-wrap'>
-        {
-          blogs?.map(post => (
-            <Link to={post.path} key={post.id}>
-              <BlogCard
-                author={post.publisher}
-                topic={post.topic}
-                content={post.content}
-                image={post.image}
-              />
-            </Link>
-          ))
-        }
-      </div> */}
-            {
+    <div className='p-12'>
+      {
         blogs ? <div>
-        <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
+          <p className="text-2xl font-bold capitalize">This are the recent blogs</p>
         <div className='mt-10 flex flex-wrap gap-5'>
           {
             blogs?.map(blog => (
@@ -37,7 +23,7 @@ const Blog = () => {
                 key={blog._id}
                 to={`/details/${blog._id}`}
               >
-                <BlogCard
+                <AdminBlogCard
                   topic={blog.title}
                   image={blog.image}
                   author={blog.postedBy}
@@ -50,8 +36,9 @@ const Blog = () => {
         </div>
         :<p className="text-4xl font-bold text-center text-gray-400">No Blog posted</p>
       }
+      
     </div>
   )
 }
 
-export default Blog
+export default AdminBlog;

@@ -44,6 +44,15 @@ html, body{
     outline: none;
 }
 
+.sidebar .active{
+    color: white;
+    background: #1a3855;
+}
+
+.sidebar .active:hover{
+    background: #1a3855;
+}
+
 /* .wow:hover::after{
     content: '';
     position: absolute;

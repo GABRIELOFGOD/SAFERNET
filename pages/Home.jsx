@@ -1,9 +1,9 @@
 import React from 'react'
 import MissionCard from '../components/MissionCard'
 import { missionCard } from '../utils/Constants'
-const heroeImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561599/safernet/homeHero_jcsock.png'
+const heroeImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707148421/safernet/multiethnic-business-partners-discussing-contract-terms-min_kcts12.jpg'
 const crush = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706563649/safernet/crush_llslrd.jpg'
-const consult = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706563664/safernet/image1_iaqsum.jpg'
+const consult = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707148421/safernet/multiethnic-business-partners-discussing-contract-terms-min_kcts12.jpg'
 
 const Home = () => {
   return (

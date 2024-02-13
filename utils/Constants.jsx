@@ -3,22 +3,22 @@ import { FaTwitter } from "react-icons/fa";
 
 export const missionCard = [
     {
-        id: 1,
-        title: 'Promoting Enhanced Digital Safety for Children',
-        body: 'Fostering Awareness, Educational Initiatives, Building Networks, and Engaging in Policy Advocacy for Online Safety.',
-        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561651/safernet/card1_vli2x8.jpg'
-    },
-    {
         id: 2,
         title: 'Empowering Digital Rights for Women and Girls',
         body: 'Enhancing Capacity to Address Women\'s Online Rights as a Fundamental Aspect of Social and Political Empowerment, and Efforts to Mitigate Online Violence Targeting Women and Girls.',
-        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561650/safernet/card2_ruaaq3.png'
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707143250/safernet/girl-social-media_sm7eoh.jpg'
     },
     {
         id: 3,
         title: 'Mitigating Disparities in the Digital Sphere',
         body: 'Engaging in Public Policy for Narrowing the Gender Gap in Internet Access and Utilization.',
-        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706561653/safernet/card3_cldwjh.jpg'
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707147899/safernet/globalization-network-technology-perforated-paper-globe-min_esy4rp.jpg'
+    },
+    {
+        id: 1,
+        title: 'Promoting Enhanced Digital Safety for Children',
+        body: 'Fostering Awareness, Educational Initiatives, Building Networks, and Engaging in Policy Advocacy for Online Safety.',
+        image: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707142935/safernet/kids-wearing-virtual-reality-goggles_mjqmbq.jpg'
     }
 ]
 
@@ -258,6 +258,27 @@ export const theNews = [
         path: '',
         topic: 'Safernet Organizes Workshop on Online Safety to Enhance Digital Protection for Women and Children'
     }
+]
+
+export const sideNav = [
+    {
+        id: 1,
+        icon: '',
+        path: 'blog',
+        element: 'blog'
+    },
+    {
+        id: 2,
+        icon: '',
+        path: 'event',
+        element: 'event'
+    },
+    {
+        id: 3,
+        icon: '',
+        path: 'campaign',
+        element: 'campaign'
+    },
 ]
 
 // export const contacts = [

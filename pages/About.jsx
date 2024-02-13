@@ -6,8 +6,8 @@ import WhatWeDo from '../components/WhatWeDo';
 const imgOne = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568108/safernet/about3_st3mu3.jpg';
 const imgTwo = "https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568105/safernet/about1_cxudxl.jpg";
 const imgThree = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568099/safernet/about2_ghpy4a.png';
-const whyImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706603820/safernet/why_yckwrk.jpg';
-const joinImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706603823/safernet/join-us_zjvdsn.jpg';
+const whyImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150403/safernet/online-school-equipment-home_uru9sp.jpg';
+const joinImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150827/safernet/business-report-graphs-charts-business-reports-pile-documents-business-concept_lyezhs.jpg';
 
 const About = () => {
   return (
