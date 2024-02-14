@@ -3,9 +3,9 @@ import WhoWhat from '../components/WhoWhat';
 import { whyChooseUs } from '../utils/Constants';
 import { LuDot } from "react-icons/lu";
 import WhatWeDo from '../components/WhatWeDo';
-const imgOne = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568108/safernet/about3_st3mu3.jpg';
-const imgTwo = "https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568105/safernet/about1_cxudxl.jpg";
-const imgThree = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706568099/safernet/about2_ghpy4a.png';
+const imgOne = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920365/safernet/portrait-happy-woman-holding-globe-her-head_xpjzsm.jpg';
+const imgTwo = "https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920359/safernet/front-view-beautiful-woman-posing-with-floral-gloves-mask_lo2eol.jpg";
+const imgThree = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920360/safernet/woman-holding-origami-object_i7jbym.jpg';
 const whyImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150403/safernet/online-school-equipment-home_uru9sp.jpg';
 const joinImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150827/safernet/business-report-graphs-charts-business-reports-pile-documents-business-concept_lyezhs.jpg';
 
@@ -15,17 +15,17 @@ const About = () => {
       <div className='md:grid p-6 grid-cols-2 bg-secondary'>
         <div className='md:px-28 m-auto '>
           <p className='text-4xl pb-6 font-bold'>Ensuring the Security of Digital Environments for Children and Women</p>
-          <p>Welcome to Safernet, where the assurance of trust and safety for children and women online transcends being merely a mission—it stands as our steadfast commitment. We are wholeheartedly devoted to shaping a digital world that is safer and more secure, particularly for the most vulnerable members of our society. Our path is fueled by a fervent dedication to guarantee that every child and woman can traverse the digital realm devoid of fear, harassment, or exploitation.</p>
+          <p>Welcome to Safernet - A project of the Brain Builders Youth Development Initiative where the assurance of trust and safety for children and women online transcends being merely a mission—it stands as our steadfast commitment. We are wholeheartedly devoted to shaping a digital world that is safer and more secure, particularly for the most vulnerable members of our society. Our path is fueled by a fervent dedication to guarantee that every child and woman can traverse the digital realm devoid of fear, harassment, or exploitation.</p>
           <div className="flex uppercase">
             <button className='p-3 my-5 text-white uppercase bg-button font-semibold text-[12px]'>donate now</button>
             <button className='p-3 my-5 text-white mx-3 uppercase bg-greener font-semibold text-[12px]'>get involved</button>
           </div>
         </div>
         <div className='flex py-24 px-12'>
-          <div className='hidden md:flex flex-col'>
+          {/* <div className='hidden md:flex flex-col'>
             <img className='h-fit mb-2 my-auto' src={imgOne} alt="aboutHeroe" />
             <img className='h-fit mt-2 my-auto' src={imgTwo} alt="aboutHeroe" />
-          </div>
+          </div> */}
           <img className='h-fit mx-2 my-auto' src={imgThree} alt="aboutHeroe" />
         </div>
       </div>

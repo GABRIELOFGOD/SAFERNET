@@ -1,6 +1,7 @@
 import React from 'react'
 import MissionCard from '../components/MissionCard'
 import { missionCard } from '../utils/Constants'
+import Abuse from '../components/Abuse'
 const heroeImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707148421/safernet/multiethnic-business-partners-discussing-contract-terms-min_kcts12.jpg'
 const crush = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706563649/safernet/crush_llslrd.jpg'
 const consult = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707148421/safernet/multiethnic-business-partners-discussing-contract-terms-min_kcts12.jpg'
@@ -30,8 +31,8 @@ const Home = () => {
           ))
         }
       </div>
-      <div className='bg-primary py-6 px-12 md:py-12 md:px-24'>
-        <img src={crush} alt="crush" />
+      <div className='bg-primary py-6 px-6 md:py-12 md:px-24'>
+        <Abuse />
       </div>
       <div className='bg-secondary flex flex-col-reverse md:grid grid-cols-2 p-6 gap-5 md:py-14 md:px-28'>
         <div className='my-auto md:px-6 '>

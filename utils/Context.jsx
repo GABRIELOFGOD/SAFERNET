@@ -9,6 +9,7 @@ export const CreateUserContext = ({children}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [blogs, setBlogs] = useState(null)
     const [event, setEvent] = useState(null)
+    const [reportLoading, setReportLoading] = useState(false)
 
     const [file, setFile] = useState();
     const [report, setReport] = useState('');
@@ -82,7 +83,7 @@ export const CreateUserContext = ({children}) => {
 
     const makeReport = async (e) => {
         e.preventDefault();
-
+        setReportLoading(true)
         let formData = new FormData();
         formData.append('url', url);
         formData.append('report', report);
@@ -91,38 +92,47 @@ export const CreateUserContext = ({children}) => {
         formData.append('file', file);
 
         if(report == 'no' || report == null || report == ''){
-            return (
+            toast.error('Please choose a report', {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            setReportLoading(false)
+        } else {
+            
+            const res = await fetch(`${baseUrl}/report/post`, {
+                method: 'POST',
+                body: formData,
+                credentials: 'include'
+            })
+
+            const response = await res.json();
+
+            if(!res.ok){
                 toast.error(response.error, {
                     position: 'top-right',
                     className: 'text-[12px]',
                     duration: '500'
                 })
-            )
+                setReportLoading(false)
+            }
+
+            if(res.ok){
+                toast.success(response.message, {
+                    position: 'top-right',
+                    className: 'text-[12px]',
+                    duration: '500'
+                })
+                setFile('')
+                setReport('no')
+                setTitle('')
+                setInformation('')
+                setUrl('')
+                setReportLoading(false)
+                console.log(response)
+            }
         }
 
-        const res = await fetch(`${baseUrl}/report/post`, {
-            method: 'POST',
-            body: formData,
-            credentials: 'include'
-        })
-
-        const response = await res.json();
-
-        if(!res.ok){
-            toast.error(response.error, {
-                position: 'top-right',
-                className: 'text-[12px]',
-                duration: '500'
-            })
-        }
-
-        if(res.ok){
-            toast.success(response.message, {
-                position: 'top-right',
-                className: 'text-[12px]',
-                duration: '500'
-            })
-        }
     }
 
     return (
@@ -135,10 +145,16 @@ export const CreateUserContext = ({children}) => {
                 event,
                 makeReport,
                 setFile,
+                file,
                 setReport,
+                report,
                 setTitle,
+                title,
                 setInformation,
-                setUrl
+                information,
+                setUrl,
+                url,
+                reportLoading
             }}
         >
             {children}

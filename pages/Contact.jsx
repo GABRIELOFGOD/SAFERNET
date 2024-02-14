@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-const contact = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706782536/safernet/contact_hrk6sm.png';
+const contact = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707921676/safernet/Contact_ty7bk2.png';
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { MdLocalPhone } from "react-icons/md";
@@ -22,7 +22,7 @@ const Contact = () => {
           <div className='flex my-10 flex-col gap-5'>
             <div className="flex gap-5">
               <FaLocationDot className='my-auto text-2xl' />
-              <p className='my-auto'>1B, Birrel Avenue, Yaba Lagos</p>
+              <p className='my-auto'>14, station Road, City of Refuge, Ilorin, kwara state. Nigeria.</p>
             </div>
             <div className="flex gap-5">
               <FaClock className='my-auto text-2xl' />
@@ -34,7 +34,7 @@ const Contact = () => {
             </Link>
             <Link to='mailto: admin@techsocietal.org' className="flex gap-5">
               <MdEmail className='my-auto text-2xl' />
-              <p className='my-auto'>admin@techsocietal.org</p>
+              <p className='my-auto'>admin@safernet.org</p>
             </Link>
           </div>
           <p className="text-gray-500">or fill our contact form below.</p>

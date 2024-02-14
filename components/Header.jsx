@@ -53,10 +53,10 @@ const Header = () => {
           ]}
         /></li>
         <li onClick={closeNav} className='my-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='contact'>contact us</NavLink></li>
-        <li><ListItems
+        {/* <li><ListItems
           title='#EndIMBS'
           lists={lists}
-        /></li>
+        /></li> */}
         <li><ListItems
           title='publications'
           lists={[

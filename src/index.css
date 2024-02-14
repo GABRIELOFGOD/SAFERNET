@@ -63,3 +63,7 @@ html, body{
     right: 0;
     z-index: 999;
 } */
+
+.flexer img{
+    width: 150px;
+}
