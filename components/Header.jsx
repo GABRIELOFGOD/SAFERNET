@@ -69,6 +69,11 @@ const Header = () => {
               id: 2,
               text: 'blog',
               path: 'blog'
+            },
+            {
+              id: 3,
+              text: 'campaign',
+              path: 'campaign'
             }
           ]}
         /></li>
