@@ -3,8 +3,8 @@ import toast from "react-hot-toast";
 // import { blog } from "./Constants";
 
 const Context = createContext(null);
-// const baseUrl = 'http://localhost:3000'
-const baseUrl = 'https://safernet-v1.vercel.app'
+const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://safernet-v1.vercel.app'
 
 export const CreateUserContext = ({children}) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +25,10 @@ export const CreateUserContext = ({children}) => {
     const [campaigns, setCampaign] = useState(null)
 
     const [username, setUsername] = useState(null)
+
+    const [news, setNews] = useState(null)
+
+    const [publication, setPublication] = useState(null)
 
     // ====================== WORKING ON ADMIN ============================ //
     const adminGetter = async () => {
@@ -283,7 +287,9 @@ export const CreateUserContext = ({children}) => {
                 campaignAbout,
                 setCampaignAbout,
                 setCampaignTitle,
-                setCampaignImg
+                setCampaignImg,
+                news,
+                publication
             }}
         >
             {children}
