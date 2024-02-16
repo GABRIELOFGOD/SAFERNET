@@ -13,12 +13,12 @@ const GetInvolved = () => {
   }
   
   return (
-    <div className='md:py-12 md:px-20'>
+    <div className='md:py-12 px-6 md:px-20'>
       <p className="text-4xl font-bold text-center text-primary">Make a Report</p>
       <form onSubmit={e => makeReport(e)} className='py-6'>
         <div className='md:flex gap-5 capitalize w-full'>
           <p className="font-bold my-auto text-primary whitespace-nowrap">Report Type:</p>
-          <select value={report} onChange={e => setReport(e.target.value)} className='capitalize outline-none w-full bg-primary rounded-md text-white h-fit py-2 px-6' id="">
+          <select value={report} onChange={e => setReport(e.target.value)} className='capitalize outline-none w-full bg-primary rounded-md text-white h-fit py-2 md:px-6' id="">
             <option value="no">  -- Select an option --  </option>
             <option value="gbv">Gender base violence</option>
             <option value="rp">Rape</option>

@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { ContextUser } from '../utils/Context';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
-    const { adminLogin } = ContextUser()
+    const { adminLogin, username, adminGetter } = ContextUser();
+
+    // useEffect(() => {
+    //     adminGetter();
+    // }, [username])
+
+    if(username){
+        
+        toast.success('You are logged in already', {
+            position: 'top-right',
+            className: 'text-[12px]',
+            duration: '500'
+        })
+        location.assign('/dashboard/blog')
+    }
 
   return (
     <div className='h-[100vh] w-[100vw] bg-primary flex items-center justify-center'>
@@ -25,4 +40,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;

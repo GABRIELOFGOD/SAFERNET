@@ -6,7 +6,7 @@ const SideNav = () => {
   return (
     <div>
     <Link to='/' className={`md:text-4xl mb-10 capitalize ml-12 text-3xl my-auto font-extrabold`}>safernet</Link>
-        <div className='w-[300px] p-6 flex relative flex-col z-50 gap-2 sidebar capitalize text-textGray text-[12px] bg-white shadow-lg h-full'>
+        <div className='w-[300px] p-6 flex relative flex-col z-50 gap-2 sidebar capitalize text-textGray text-[12px] bg-white h-full'>
         {
             sideNav.map(item => (
             <NavLink className='flex gap-3 whitespace-nowrap hover:bg-[#efefef] duration-150 py-2 px-6 rounded-md' to={item.path} key={item.id}>

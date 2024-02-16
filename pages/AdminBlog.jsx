@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ContextUser } from '../utils/Context'
 import BlogCard from '../components/BlogCard'
 import { Link } from 'react-router-dom';
 import AdminBlogCard from '../components/AdminBlogCard';
+import Poster from '../components/Poster';
+import BlogPost from '../components/BlogPost';
 
 const AdminBlog = () => {
+  const [show, setShow] = useState(false)
   const { viewBlog, blogs } = ContextUser();
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const AdminBlog = () => {
     <div className='p-12'>
       {
         blogs ? <div>
-          <p className="text-2xl font-bold capitalize">This are the recent blogs</p>
+        <button onClick={() => setShow(true)} className='bg-primary hover:bg-button duration-200 rounded-md py-3 px-4 text-[12px] whitespace-nowrap text-white h-fit'>Post New Blog</button>
         <div className='mt-10 flex flex-wrap gap-5'>
           {
             blogs?.map(blog => (
@@ -36,7 +39,10 @@ const AdminBlog = () => {
         </div>
         :<p className="text-4xl font-bold text-center text-gray-400">No Blog posted</p>
       }
-      
+      <Poster
+        children={<BlogPost />}
+        show={show}
+      />
     </div>
   )
 }

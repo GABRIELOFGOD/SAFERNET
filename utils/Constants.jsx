@@ -279,6 +279,12 @@ export const sideNav = [
         path: 'campaign',
         element: 'campaign'
     },
+    {
+        id: 4,
+        icon: '',
+        path: 'report',
+        element: 'report'
+    }
 ]
 
 // export const contacts = [

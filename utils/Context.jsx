@@ -17,6 +17,33 @@ export const CreateUserContext = ({children}) => {
     const [information, setInformation] = useState('');
     const [url, setUrl] = useState('');
 
+    const [campaignTitle, setCampaignTitle] = useState('');
+    const [campaignAbout, setCampaignAbout] = useState('');
+    const [campaignImg, setCampaignImg] = useState();
+
+    const [campaigns, setCampaign] = useState(null)
+
+    const [username, setUsername] = useState(null)
+
+    // ====================== WORKING ON ADMIN ============================ //
+    const adminGetter = async () => {
+        const res = await fetch(`${baseUrl}/admin/getter`, {credentials: 'include'})
+        const response = await res.json();
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            console.log(response)
+            if(!username) location.assign('/admin/login')
+        }
+
+        if(res.ok){
+            setUsername(response.user)
+        }
+    }
+
     const adminLogin = async (e, email, password) => {
         e.preventDefault();
         const res = await fetch(`${baseUrl}/admin/login`, {
@@ -41,7 +68,9 @@ export const CreateUserContext = ({children}) => {
         }
 
         if(res.ok){
-            location.assign('/')
+            setUsername(response.user)
+            location.assign('/dashboard/blog')
+            console.log(username)
         }
     }
 
@@ -80,6 +109,8 @@ export const CreateUserContext = ({children}) => {
             setEvent(response)
         }
     }
+
+    // ================================ WORKING ON REPORT ================================= //
 
     const makeReport = async (e) => {
         e.preventDefault();
@@ -135,6 +166,93 @@ export const CreateUserContext = ({children}) => {
 
     }
 
+    // ===================================== CAMPAIGN APIs ==================================== //
+
+    const campaignPoster = async (e, close) => {
+        e.preventDefault()
+        let formData = new FormData();
+        formData.append('title', campaignTitle);
+        formData.append('about', campaignAbout);
+        formData.append('file', campaignImg);
+
+        const res = await fetch(`${baseUrl}/campaign/post`, {
+            method: 'POST',
+            body: formData,
+            credentials: 'include'
+        })
+
+        const response = await res.json();
+
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            console.log(response)
+        }
+
+        if(res.ok){
+            toast.success(response.message, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            setCampaignTitle('');
+            setCampaignAbout('');
+            close();
+        }
+
+        // const formData = new FormData();
+        // formData.append('title', campaignTitle);
+        // formData.append('body', campaignAbout);
+        // formData.append('file', campaignImg);
+        
+        // const res = await fetch(`${baseUrl}/campaign/post`, {
+        //     method: 'POST',
+        //     body: formData,
+        //     credentials: 'include'
+        // })
+
+        // const response = await res.json();
+        // if(!res.ok){
+        //     toast.error(response.error, {
+        //         position: 'top-right',
+        //         className: 'text-[12px]',
+        //         duration: '500'
+        //     })
+        //     console.log(response)
+        // }
+
+        // if(res.ok){
+        //     toast.success(response.message, {
+        //         position: 'top-right',
+        //         className: 'text-[12px]',
+        //         duration: '500'
+        //     })
+        //     setCampaignTitle('');
+        //     setCampaignAbout('');
+        //     close();
+        // }
+    }
+
+    const campaignGetter = async () => {
+        const res = await fetch(`${baseUrl}/campaign/get`, {credentials: 'include'})
+        const response = await res.json();
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+
+        if(res.ok){
+            setCampaign(response.allCampaign)
+            console.log(response.allCampaign)
+        }
+    }
+
     return (
         <Context.Provider
             value={{
@@ -154,7 +272,17 @@ export const CreateUserContext = ({children}) => {
                 information,
                 setUrl,
                 url,
-                reportLoading
+                reportLoading,
+                campaignGetter,
+                campaigns,
+                adminGetter,
+                username,
+                campaignPoster,
+                campaignTitle,
+                campaignAbout,
+                setCampaignAbout,
+                setCampaignTitle,
+                setCampaignImg
             }}
         >
             {children}
