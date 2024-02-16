@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MdEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { ContextUser } from '../utils/Context';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -36,6 +36,7 @@ const Login = () => {
             </div>
             <button className='text-white hover:bg-opacity-90 duration-200 bg-primary w-full py-3 rounded-sm text-sm'>Login</button>
         </form>
+        <Toaster />
     </div>
   )
 }
