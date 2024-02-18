@@ -28,6 +28,8 @@ const LazyDashboard = lazy(() => import('../pages/Dashboard'))
 const LazyAdminBlog = lazy(() => import('../pages/AdminBlog'))
 const LazyAdminCampaign = lazy(() => import('../pages/AdminCampaign'))
 const LazyAdminEvent = lazy(() => import('../pages/AdminEvent'))
+const LazyDetails = lazy(() => import('../pages/Details'))
+const AdminDetails = lazy(() => import('../pages/AdminDetaills'))
 
 const router = createBrowserRouter([
   {
@@ -77,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Suspense fallback={<Loader />}><LazyContact /></Suspense>
+      },
+      {
+        path: 'details/:id',
+        element: <Suspense fallback={<Loader />}><LazyDetails /></Suspense>
       }
     ]
   },
@@ -100,6 +106,10 @@ const router = createBrowserRouter([
       {
         path: 'campaign',
         element: <Suspense fallback={<Loader />}><LazyAdminCampaign /></Suspense>
+      },
+      {
+        path: 'blog/:id',
+        element: <Suspense fallback={<Loader />}><AdminDetails /></Suspense>
       }
     ]
   },

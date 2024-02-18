@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { wrap } from '../utils/truncator'
+import { Link } from 'react-router-dom'
 
-const AdminBlogCard = ({image, topic, content, author}) => {
+const AdminBlogCard = ({image, topic, content, author, id, show, title, details, file, setDeleter}) => {
+  const [menu, setMenu] = useState(false);
+
+  const editor = () => {
+    show(true)
+    title(topic)
+    details(content)
+    file(image)
+  }
+
   return (
-    <div className='md:w-[300px] mb-5'>
-        {image && <img src={image} alt="blog image" />}
+    <div onMouseEnter={() => setMenu(true)} onMouseLeave={() => setMenu(false)} className='md:w-[280px] bg-white relative shadow-md rounded-md overflow-hidden mb-5'>
+      <ul className={`${menu ? 'flex' : 'hidden'} flex-col shadow-md absolute top-2 bg-white py-2 px-3 text-[12px] gap-3 right-4`}>
+        <Link className='hover:bg-button cursor-pointer p-2 hover:text-white text-primary font-semibold rounded-sm duration-100' to={id}>View Blog</Link>
+        <p onClick={editor} className='hover:bg-button cursor-pointer p-2 hover:text-white text-primary font-semibold rounded-sm duration-100'>Edit Blog</p>
+        <p onClick={() => setDeleter(true)} className='hover:bg-button cursor-pointer p-2 hover:text-white text-primary font-semibold rounded-sm duration-100'>Delete Blog</p>
+      </ul>
+    {image && <div className='max-h-[200px] overflow-hidden'><img className='w-fit' src={image} alt="blog image" /></div>}
         <div className='p-3 shadow-sm'>
-            <p className="font-bold">{topic}</p>
-            <p className="font-semibold">{author}</p>
-            <p>{content}</p>
+            <p className="font-bold capitalize text-primary">{topic}</p>
+            <p className="font-semibold text-[10px] py-2 text-gray-600">Posted By: {author}</p>
+            <p className=' text-[12px]'>{wrap(content)}</p>
         </div>
     </div>
   )

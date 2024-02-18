@@ -12,27 +12,12 @@ const Blog = () => {
 
   return (
     <div className='md:px-32 p-6 md:py-12 bg-secondary'>
-      {/* <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
-      <div className='md:flex gap-5 flex-wrap'>
-        {
-          blogs?.map(post => (
-            <Link to={post.path} key={post.id}>
-              <BlogCard
-                author={post.publisher}
-                topic={post.topic}
-                content={post.content}
-                image={post.image}
-              />
-            </Link>
-          ))
-        }
-      </div> */}
             {
         blogs ? <div>
         <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
         <div className='mt-10 flex flex-wrap gap-5'>
           {
-            blogs?.map(blog => (
+            blogs?.slice(0).reverse().map(blog => (
               <Link
                 key={blog._id}
                 to={`/details/${blog._id}`}

@@ -14,7 +14,7 @@ const CampaignPost = ({close}) => {
   }
 
   return (
-    <div className='bg-button relative py-20 px-12 max-h-[520px] rounded-md'>
+    <div className='bg-button relative py-20 px-12 max-h-[520px] overflow-auto rounded-md'>
       <IoCloseSharp onClick={close} className='absolute top-8 right-10 text-white text-2xl cursor-pointer' />
       <form className='flex flex-col gap-5' onSubmit={e => campaignPoster(e, close)}>
         <input value={campaignTitle} onChange={e => setCampaignTitle(e.target.value)} type="text" className='px-3 text-[12px] h-[40px] bg-transparent outline-none border-2 border-white rounded-sm' placeholder='Campaign Title' />

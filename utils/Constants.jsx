@@ -295,3 +295,15 @@ export const sideNav = [
 //     }
 // ]
 
+
+// export const adminBlogList = [
+//     {
+//         id: 1,
+//         text: 'view blog'
+//     },
+//     {
+//         id: 2,
+//         text
+//     }
+// ]
+

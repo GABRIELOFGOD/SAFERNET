@@ -8,7 +8,6 @@ const baseUrl = 'http://localhost:3000'
 
 export const CreateUserContext = ({children}) => {
     const [isLoading, setIsLoading] = useState(false);
-    const [blogs, setBlogs] = useState(null)
     const [event, setEvent] = useState(null)
     const [reportLoading, setReportLoading] = useState(false)
 
@@ -18,6 +17,18 @@ export const CreateUserContext = ({children}) => {
     const [information, setInformation] = useState('');
     const [url, setUrl] = useState('');
 
+    // ==================== FOR BLOG ================== //
+    const [blogFile, setBlogFile] = useState()
+    const [blogTitle, setBlogTitle] = useState('')
+    const [blogDetails, setBlogDetails] = useState('');
+    const [blogs, setBlogs] = useState(null);
+    const [blog, setBlog] = useState(null)
+
+    const [editTitle, setEditTitle] = useState('')
+    const [editDetails, setEditDetails] = useState('')
+    const [editFile, setEditFile] = useState()
+
+    // ============== FOR CAMPAIGN ==================== //
     const [campaignTitle, setCampaignTitle] = useState('');
     const [campaignAbout, setCampaignAbout] = useState('');
     const [campaignImg, setCampaignImg] = useState();
@@ -94,6 +105,87 @@ export const CreateUserContext = ({children}) => {
         }
         if(res.ok){
             setBlogs(response)
+        }
+    }
+
+    const blogPoster = async (e, close) => {
+        e.preventDefault();
+        const formData = new FormData();
+
+        formData.append('image', blogFile);
+        formData.append('title', blogTitle);
+        formData.append('body', blogDetails);
+
+        const res = await fetch(`${baseUrl}/blog/post`, {
+            method: 'POST',
+            body: formData,
+            credentials: 'include'
+        })
+
+        const response = await res.json();
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            console.log(response)
+        }
+
+        if(res.ok){
+            toast.success(response.message, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            close();
+            console.log(response)
+        }
+    }
+
+    const singleBlog = async id => {
+        const res = await fetch(`${baseUrl}/blog/get/${id}`, {credentials: 'include'})
+        const response = await res.json();
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+            console.log(response)
+        }
+        if(res.ok){
+            setBlog(response)
+            console.log(response)
+        }
+    }
+
+    const editBlog = async (e, id) => {
+        const formData = new FormData();
+        formData.append('title', editTitle)
+        formData.append('body', editDetails)
+        formData.append('image', editFile)
+        e.preventDefault();
+        const res = await fetch(`${baseUrl}/blog/get/${id}`, {
+            method: 'PUT',
+            body: formData,
+            credentials: 'include'
+        })
+        const response = res.json();
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+
+        if(res.ok){
+            toast.success(response.message, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '700'
+            })
         }
     }
 
@@ -289,7 +381,22 @@ export const CreateUserContext = ({children}) => {
                 setCampaignTitle,
                 setCampaignImg,
                 news,
-                publication
+                publication,
+                blogPoster,
+                blogDetails,
+                setBlogFile,
+                blogTitle,
+                setBlogTitle,
+                setBlogDetails,
+                blog,
+                singleBlog,
+                editBlog,
+                editDetails,
+                editFile,
+                editTitle,
+                setEditFile,
+                setEditDetails,
+                setEditTitle
             }}
         >
             {children}

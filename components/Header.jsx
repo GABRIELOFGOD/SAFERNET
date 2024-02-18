@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <div className='flex sticky z-50 top-0 justify-between px-6 md:px-20 py-5 bg-white uppercase shadow-sm'>
       <Link onClick={closeNav} to='/' className={`md:text-4xl text-3xl my-auto font-extrabold`}>safernet</Link>
-      <ul className={`md:flex activa duration-300 text-white md:text-black md:top-0 md:w-fit w-full left-0 md:py-0 py-5 absolute md:relative gap-3 my-auto ${navShow ? 'top-[80px] bg-primary' : 'top-[-500px]'}`}>
+      <ul className={`md:flex-row flex flex-col activa duration-300 text-white md:text-black md:top-0 md:w-fit w-full left-0 md:py-0 py-5 absolute md:relative gap-5 md:gap-3 my-auto ${navShow ? 'top-[80px] bg-primary' : 'top-[-500px]'}`}>
         <li onClick={closeNav} className='w-full my-auto md:w-fit'><NavLink to='about' className='hover:bg-button text-[12px] p-3 hover:text-white font-bold rounded-sm duration-300'>about us</NavLink></li>
         <li><ListItems
           title='updates'
