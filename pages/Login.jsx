@@ -24,7 +24,7 @@ const Login = () => {
     }
 
   return (
-    <div className='h-[100vh] w-[100vw] bg-primary flex items-center justify-center'>
+    <div className='h-[100vh] md:w-[100vw] bg-primary flex items-center justify-center'>
         <form onSubmit={e => adminLogin(e, email, password)} className='bg-white px-12 py-12 rounded-md flex flex-col gap-5'>
             <div className='relative h-fit'>
                 <MdEmail className='text-primary absolute text-2xl top-2 left-2' />
