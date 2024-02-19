@@ -29,7 +29,10 @@ const LazyAdminBlog = lazy(() => import('../pages/AdminBlog'))
 const LazyAdminCampaign = lazy(() => import('../pages/AdminCampaign'))
 const LazyAdminEvent = lazy(() => import('../pages/AdminEvent'))
 const LazyDetails = lazy(() => import('../pages/Details'))
-const AdminDetails = lazy(() => import('../pages/AdminDetaills'))
+const AdminDetails = lazy(() => import('../pages/AdminDetaills'));
+const LazyVideo = lazy(() => import('../pages/Videos'));
+const LazyPhoto = lazy(() => import('../pages/Photo'));
+const LazyMedia = lazy(() => import('../pages/Media'))
 
 const router = createBrowserRouter([
   {
@@ -61,8 +64,18 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}><LazyBlog /></Suspense>
       },
       {
-        path: 'videos',
-        element: <Videos />
+        path: 'media',
+        element: <Suspense fallback={<Loader />}><LazyMedia /></Suspense>,
+        children: [
+          {
+            path: 'photo',
+            element: <Suspense fallback={<Loader />}><LazyPhoto /></Suspense>
+          },
+          {
+            path: 'video',
+            element: <Suspense fallback={<Loader />}><LazyVideo /></Suspense>
+          }
+        ]
       },
       {
         path: 'news',

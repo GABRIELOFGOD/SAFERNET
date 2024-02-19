@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <div className='flex flex-col md:flex-row py-6 px-6 md:gap-10 md:px-28'>
+      <div className='flex flex-col md:flex-row py-6 px-6 md:gap-20 md:px-28'>
         <img src={contact} className='w-fit hidden md:flex' alt="contact-image" />
         <div className='my-auto px-10'>
           <p className="text-4xl font-bold text-primary capitalize">Reach out to us today</p>

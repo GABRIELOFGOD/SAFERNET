@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { wrap } from '../utils/truncator'
+import { titleTrunc, wrap } from '../utils/truncator'
 import { Link } from 'react-router-dom'
 
 const AdminBlogCard = ({image, topic, content, author, id, show, title, details, file, setDeleter, idSetter}) => {
@@ -27,7 +27,7 @@ const AdminBlogCard = ({image, topic, content, author, id, show, title, details,
       </ul>
     {image && <div className='max-h-[200px] overflow-hidden'><img className='w-fit' src={image} alt="blog image" /></div>}
         <div className='p-3 shadow-sm'>
-            <p className="font-bold capitalize text-primary">{topic}</p>
+            <p className="font-bold capitalize text-primary">{titleTrunc(topic)}</p>
             <p className="font-semibold text-[10px] py-2 text-gray-600">Posted By: {author}</p>
             <p className=' text-[12px]'>{wrap(content)}</p>
         </div>

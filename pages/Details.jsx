@@ -21,7 +21,7 @@ const Details = () => {
         <p className="text-3xl capitalize font-bold text-black">{blog.theBlog.title}</p>
         {blog.theBlog.postedBy && <p className="text-[15px] pl-6 font-mono py-2 text-gray-600">Posted by: {blog.theBlog.postedBy}</p>}
         {blog.theBlog.image && <img src={blog.theBlog.image} alt="blog Img" />}
-        <p className='text-justify py-3'>{blog.theBlog.body}</p>
+        <p className='text-justify text-[16px] pt-10 pb-3'>{blog.theBlog.body}</p>
       </div> : <p className='text-4xl font-bold text-center text-gray-400'>Loading Blog...</p>}
     </div>
   )

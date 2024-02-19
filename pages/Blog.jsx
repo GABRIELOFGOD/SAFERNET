@@ -15,7 +15,7 @@ const Blog = () => {
             {
         blogs ? <div>
         <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
-        <div className='mt-10 flex flex-wrap gap-5'>
+        <div className='mt-10 justify-between flex flex-wrap gap-5'>
           {
             blogs?.slice(0).reverse().map(blog => (
               <Link
