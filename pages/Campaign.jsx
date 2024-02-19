@@ -14,15 +14,15 @@ const Campaign = () => {
   return (
     <div className='bg-button flex flex-col items-center px-5 justify-center py-20 text-white'>
       {campaigns ? <div>
-        <p className="text-4xl pb-10 font-bold">Crush #IBSA Campaign</p>
+        {/* <p className="text-4xl pb-10 font-bold">Crush #IBSA Campaign</p> */}
         {
-          campaigns?.length >=1 ? <div className='md:flex-row flex flex-col gap-10'>
+          campaigns?.length >=1 ? <div className='md:flex-row flex-wrap flex flex-col gap-10'>
           {
-            campaigns?.map(({ id, image, topic, path }) => (
+            campaigns?.map(({ id, image, title, path }) => (
               <Link className='md:w-[250px]' to={path} key={id}>
                 <CampaignImg
                   image={image}
-                  title={topic}
+                  title={title}
                   border={'border-white'}
                 />
               </Link>

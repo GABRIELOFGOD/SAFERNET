@@ -14,6 +14,8 @@ const AdminBlog = () => {
 
   const [deleted, setDelete] = useState(false)
 
+  const [thisId, setThisId] = useState()
+
 
   useEffect(() => {
     viewBlog();
@@ -49,6 +51,7 @@ const AdminBlog = () => {
                   details={setEditDetails}
                   file={setEditFile}
                   setDeleter={setDelete}
+                  idSetter={setThisId}
                 />
               </div>
             ))
@@ -70,12 +73,13 @@ const AdminBlog = () => {
             settingFile={setEditFile}
             settingTitle={setEditTitle}
             settingDetails={setEditDetails}
+            id={thisId}
           />}
         show={showEdit}
       />
       <Poster
         show={deleted}
-        children={<DeleteConfirm />}
+        children={<DeleteConfirm id={thisId} setDeleter={setDelete} />}
       />
     </div>
   )

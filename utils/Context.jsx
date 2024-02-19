@@ -3,8 +3,8 @@ import toast from "react-hot-toast";
 // import { blog } from "./Constants";
 
 const Context = createContext(null);
-// const baseUrl = 'http://localhost:3000'
-const baseUrl = 'https://safernet-v1.vercel.app'
+const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://safernet-v1.vercel.app'
 
 export const CreateUserContext = ({children}) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -37,9 +37,11 @@ export const CreateUserContext = ({children}) => {
 
     const [username, setUsername] = useState(null)
 
-    const [news, setNews] = useState(null)
+    const [news, setNews] = useState(null) // TODO
 
-    const [publication, setPublication] = useState(null)
+    const [publication, setPublication] = useState(null) // TODO
+
+    const [deleteLoad, setDeleteLoad] = useState(false)
 
     // ====================== WORKING ON ADMIN ============================ //
     const adminGetter = async () => {
@@ -160,7 +162,7 @@ export const CreateUserContext = ({children}) => {
         }
     }
 
-    const editBlog = async (e, id) => {
+    const editBlog = async (e, id, close) => {
         const formData = new FormData();
         formData.append('title', editTitle)
         formData.append('body', editDetails)
@@ -173,7 +175,7 @@ export const CreateUserContext = ({children}) => {
         })
         const response = res.json();
         if(!res.ok){
-            toast.error(response.error, {
+            toast.error('blog update failed', {
                 position: 'top-right',
                 className: 'text-[12px]',
                 duration: '500'
@@ -181,11 +183,39 @@ export const CreateUserContext = ({children}) => {
         }
 
         if(res.ok){
+            toast.success('Blog updated successfully', {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '700'
+            })
+            close()
+
+        }
+    }
+
+    const blogDeleter = async (id, close) => {
+        setDeleteLoad(true)
+        const res = await fetch(`${baseUrl}/blog/get/${id}`, {
+            method: 'DELETE',
+            credentials: 'include'
+        })
+        const response = await res.json();
+
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+        if(res.ok){
             toast.success(response.message, {
                 position: 'top-right',
                 className: 'text-[12px]',
                 duration: '700'
             })
+            close();
+
         }
     }
 
@@ -396,7 +426,9 @@ export const CreateUserContext = ({children}) => {
                 editTitle,
                 setEditFile,
                 setEditDetails,
-                setEditTitle
+                setEditTitle,
+                deleteLoad,
+                blogDeleter
             }}
         >
             {children}

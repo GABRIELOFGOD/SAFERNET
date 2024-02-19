@@ -35,21 +35,21 @@ const Header = () => {
         <li><ListItems
           title='updates'
           lists={[
-            {
-              id: 1,
-              text: 'videos',
-              // path: ''
-            },
+            // {
+            //   id: 1,
+            //   text: 'videos',
+            //   // path: ''
+            // },
             {
               id: 2,
               text: 'news',
               path: 'news'
             },
-            {
-              id: 3,
-              text: 'events',
-              path: 'events'
-            }
+            // {
+            //   id: 3,
+            //   text: 'events',
+            //   path: 'events'
+            // }
           ]}
         /></li>
         <li onClick={closeNav} className='my-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='contact'>contact us</NavLink></li>
