@@ -307,3 +307,18 @@ export const sideNav = [
 //     }
 // ]
 
+
+export const photos = [
+    {
+        id: 1,
+        title: 'Safer Internet Day',
+        cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708386655/safernet/WSD_44_of_111_skjzls.jpg',
+        link: 'https://photos.app.goo.gl/6razmiqrpfZTmeZ59'
+    },
+    {
+        id: 2,
+        title: 'Yvote naija',
+        cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708387627/safernet/DSC_0049_ekkgfp.jpg',
+        // link: 
+    }
+]

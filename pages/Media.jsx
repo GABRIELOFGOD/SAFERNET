@@ -24,13 +24,12 @@ const Media = () => {
     <div className='py-12 bg-secondary'>
       <p className="text-4xl text-primary mb-10 text-center font-bold">Photos & Videos</p>
       <div className="md:flex-row flex gap-5 px-6 md:px-32 flex-col">
-        {
-          item.map(foto => (
-            <Link className={`rounded-lg wow relative overflow-hidden`} to={foto.path} key={foto.id}>
-              <img src={foto.image} alt="foto" />
-            </Link>
-          ))
-        }
+          <Link className={`rounded-lg wow relative overflow-hidden`} to={'photo'}>
+            <img src={photo} className='-z-10' alt="foto" />
+          </Link>
+          <Link className={`rounded-lg wow1 relative overflow-hidden`} to={'video'}>
+            <img src={video} alt="foto" />
+          </Link>
       </div>
       <Outlet />
     </div>

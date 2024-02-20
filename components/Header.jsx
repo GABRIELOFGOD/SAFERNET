@@ -50,6 +50,10 @@ const Header = () => {
             //   text: 'events',
             //   path: 'events'
             // }
+            {
+              id: 4,
+              text: 'report'
+            }
           ]}
         /></li>
         {/* <li><ListItems

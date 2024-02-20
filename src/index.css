@@ -53,16 +53,39 @@ html, body{
     background: #1a3855;
 }
 
-/* .wow:hover::after{
-    content: '';
+.wow:hover::after{
+    content: 'PHOTOS';
+    background: green;
+    z-index: 999;
     position: absolute;
-    background: #5eb546;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    left: 0;
-    right: 0;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    opacity: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.wow1:hover::after{
+    content: 'VIDEOS';
+    background: green;
     z-index: 999;
-} */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    opacity: 60%;
+    display: flex;
+    align-items: center;
+}
 
 .flexer img{
     width: 150px;
