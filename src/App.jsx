@@ -32,7 +32,9 @@ const LazyDetails = lazy(() => import('../pages/Details'))
 const AdminDetails = lazy(() => import('../pages/AdminDetaills'));
 const LazyVideo = lazy(() => import('../pages/Videos'));
 const LazyPhoto = lazy(() => import('../pages/Photo'));
-const LazyMedia = lazy(() => import('../pages/Media'))
+const LazyMedia = lazy(() => import('../pages/Media'));
+const LazyCampaignDetails = lazy(() => import('../pages/CampaignDetails'));
+const LazyEducation = lazy(() => import('../pages/Education'))
 
 const router = createBrowserRouter([
   {
@@ -96,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: 'details/:id',
         element: <Suspense fallback={<Loader />}><LazyDetails /></Suspense>
+      },
+      {
+        path: 'campaign/:id',
+        element: <Suspense fallback={<Loader />}><LazyCampaignDetails /></Suspense>
       }
     ]
   },
@@ -125,6 +131,10 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}><AdminDetails /></Suspense>
       }
     ]
+  },
+  {
+    path: 'education',
+    element: <Suspense fallback={<Loader />}><LazyEducation /></Suspense>
   },
   {
     path: '*',

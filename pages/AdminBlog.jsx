@@ -31,9 +31,9 @@ const AdminBlog = () => {
 
   return (
     <div className='p-12'>
+      <button onClick={() => setShow(true)} className='bg-primary hover:bg-button duration-200 rounded-md py-3 px-4 text-[12px] whitespace-nowrap text-white h-fit'>Post New Blog</button>
       {
         blogs ? <div>
-        <button onClick={() => setShow(true)} className='bg-primary hover:bg-button duration-200 rounded-md py-3 px-4 text-[12px] whitespace-nowrap text-white h-fit'>Post New Blog</button>
         <div className='mt-10 flex flex-wrap gap-5'>
           {
             blogs?.slice(0).reverse().map(blog => (

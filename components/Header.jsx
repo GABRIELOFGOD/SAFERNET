@@ -50,10 +50,10 @@ const Header = () => {
             //   text: 'events',
             //   path: 'events'
             // }
-            {
-              id: 4,
-              text: 'report'
-            }
+            // {
+            //   id: 4,
+            //   text: 'report'
+            // }
           ]}
         /></li>
         {/* <li><ListItems
@@ -80,7 +80,8 @@ const Header = () => {
             }
           ]}
         /></li>
-        <li onClick={closeNav} className='my-auto mb-4 md:mb-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='make-report'>make a report</NavLink></li>
+        {/* <li onClick={closeNav} className='my-auto mb-4 md:mb-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='make-report'>make a report</NavLink></li> */}
+        <li onClick={closeNav} className='my-auto mb-4 md:mb-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='education'>Education</NavLink></li>
         <li onClick={closeNav} className='my-auto'><NavLink className='hover:bg-button hover:text-white text-[12px] p-3 font-bold rounded-sm duration-300' to='contact'>contact us</NavLink></li>
       </ul>
       <div onClick={toggleNav} className='my-auto text-2xl flex md:hidden p-2 rounded-md border border-primary hover:text-white hover:bg-primary cursor-pointer duration-300'>{navShow ? <IoCloseSharp /> : <HiMenuAlt3 />}</div>

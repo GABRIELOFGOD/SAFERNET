@@ -18,11 +18,11 @@ const Campaign = () => {
         {
           campaigns?.length >=1 ? <div className='md:flex-row flex-wrap flex flex-col gap-10'>
           {
-            campaigns?.map(({ id, image, title, path }) => (
-              <Link className='md:w-[250px]' to={path} key={id}>
+            campaigns?.map((campaign, i) => (
+              <Link className='md:w-[250px]' to={`${campaign?._id}`} key={i}>
                 <CampaignImg
-                  image={image}
-                  title={title}
+                  image={campaign?.image}
+                  title={campaign?.title}
                   border={'border-white'}
                 />
               </Link>

@@ -33,6 +33,8 @@ export const CreateUserContext = ({children}) => {
     const [campaignAbout, setCampaignAbout] = useState('');
     const [campaignImg, setCampaignImg] = useState();
 
+    const [singleCampaign, setSingleCampaign] = useState(null)
+
     const [campaigns, setCampaign] = useState(null)
 
     const [username, setUsername] = useState(null)
@@ -381,6 +383,52 @@ export const CreateUserContext = ({children}) => {
         }
     }
 
+    const getSingleCampaign = async (id) => {
+        const res = await  fetch(`${baseUrl}/campaign/get/${id}`)
+        const response = await res.json()
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+
+        if(res.ok){
+            setSingleCampaign(response.data)
+        }
+    }
+
+    // ========================== NEWSLETTER ====================================== //
+    const newsletterSubscribe = async email => {
+        const res = await fetch(`${baseUrl}/newsletter/subscribe`, {
+            method: 'POST',
+            body: JSON.stringify(email),
+            headers: {
+                'Content-Type':'application/json'
+            },
+            credentials: 'include'
+        })
+
+        const response = await res.json();
+
+        if(!res.ok){
+            toast.error(response.error, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+
+        if(res.ok){
+            toast.success(response.message, {
+                position: 'top-right',
+                className: 'text-[12px]',
+                duration: '500'
+            })
+        }
+    }
+
     return (
         <Context.Provider
             value={{
@@ -429,7 +477,8 @@ export const CreateUserContext = ({children}) => {
                 setEditDetails,
                 setEditTitle,
                 deleteLoad,
-                blogDeleter
+                blogDeleter,
+                getSingleCampaign, singleCampaign
             }}
         >
             {children}
