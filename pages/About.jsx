@@ -5,8 +5,8 @@ import { LuDot } from "react-icons/lu";
 import WhatWeDo from '../components/WhatWeDo';
 const imgOne = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920365/safernet/portrait-happy-woman-holding-globe-her-head_xpjzsm.jpg';
 const imgTwo = "https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920359/safernet/front-view-beautiful-woman-posing-with-floral-gloves-mask_lo2eol.jpg";
-const imgThree = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707920360/safernet/woman-holding-origami-object_i7jbym.jpg';
-const whyImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150403/safernet/online-school-equipment-home_uru9sp.jpg';
+const imgThree = '/images/about.jpg';
+const whyImg = '/images/puzzle.jpg';
 const joinImg = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707150827/safernet/business-report-graphs-charts-business-reports-pile-documents-business-concept_lyezhs.jpg';
 
 const About = () => {
