@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 
 const Context = createContext(null);
 // const baseUrl = 'http://localhost:3000'
-// const baseUrl = 'https://safernet-v1.vercel.app'
-const baseUrl = 'https://api.thesafernet.org'
+const baseUrl = 'https://safernet-v1.vercel.app'
+// const baseUrl = 'https://api.thesafernet.org'
 
 
 export const CreateUserContext = ({children}) => {
