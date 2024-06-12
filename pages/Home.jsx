@@ -49,9 +49,9 @@ const Home = () => {
       </div>
       <div className=' py-10'>
         <p className='px-20 flex text-4xl font-semibold text-primary my-5'>Recent Blog</p>
-        <div className='flex px-28 justify-between gap-3'>
+        <div className='flex flex-wrap px-10 md:px-28 justify-center gap-10'>
           {
-            blogs?.slice(0, 3).map((card, i) => (
+            blogs?.slice().reverse().slice(0, 3).map((card, i) => (
               <Link to={`/details/${card?._id}`} key={i}>
                 <BlogCard
                   topic={card.title}

@@ -90,3 +90,20 @@ html, body{
 .flexer img{
     width: 150px;
 }
+
+.custom-link {
+    color: blue; /* Change to your preferred color */
+    text-decoration: underline; /* Add or remove underline as needed */
+}
+
+.custom-link:hover {
+    color: darkblue; /* Change to your preferred hover color */
+}
+
+.subtitle {
+    font-size: 1.45em; /* Adjust size as needed */
+    font-weight: 600; /* Semibold */
+    display: block; /* Ensure it behaves like a block element */
+    /* margin-top: 10px; */
+    margin-bottom: -50px;
+}

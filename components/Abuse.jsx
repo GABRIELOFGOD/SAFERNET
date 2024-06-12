@@ -5,12 +5,12 @@ const abuseTwo = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1707918454/
 const Abuse = () => {
   return (
     <div className='flex justify-between gap-5 bg-white'>
-        <img className='w-[50px] md:w-[150px]' src={abuseIne} alt="abuse-Image" />
+        <img className='w-[50px] hidden md:flex md:w-[150px]' src={abuseIne} alt="abuse-Image" />
         <div className="text-center my-auto">
           <p className="md:text-3xl text-xl my-auto font-extrabold">Combact Image-Based Sexual Abuse</p>
           <p className="text-sm font-semibold">#stopBulling #stopOnlineGBV #stampOutGBV</p>
         </div>
-        <img className='w-[50px] md:w-[150px]' src={abuseTwo} alt="abuse-image" />
+        <img className='w-[50px] hidden md:flex md:w-[150px]' src={abuseTwo} alt="abuse-image" />
     </div>
   )
 }

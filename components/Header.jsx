@@ -42,8 +42,8 @@ const Header = () => {
             },
             {
               id: 2,
-              text: 'news',
-              path: 'news'
+              text: 'publications',
+              path: 'publications'
             },
             // {
             //   id: 3,
@@ -63,11 +63,6 @@ const Header = () => {
         <li><ListItems
           title='publications'
           lists={[
-            {
-              id: 1,
-              text: 'publications',
-              path: 'publications'
-            },
             {
               id: 2,
               text: 'blog',

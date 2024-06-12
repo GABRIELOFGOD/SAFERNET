@@ -78,6 +78,29 @@ export const quickLinks = [
     }
 ]
 
+export const ourProjects = [
+    {
+        id: 1,
+        label: 'safe-education',
+        path: '/education'
+    },
+    {
+        id: 2,
+        label: 'BBYDI',
+        path: 'https://thebrainbuilders.org'
+    },
+    {
+        id: 3,
+        label: 'BBYDI',
+        path: 'https://thebrainbuilders.org'
+    },
+    {
+        id: 4,
+        label: 'Donate',
+        path: 'https://paystack.com/pay/bbydidonates'
+    },
+]
+
 export const whatWeDo = [
     {
         id: 1,
@@ -320,5 +343,11 @@ export const photos = [
         title: 'Yvote naija',
         cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708387627/safernet/DSC_0049_ekkgfp.jpg',
         // link: 
-    }
+    },
+    {
+        id: 3,
+        title: 'Safe School Education',
+        cover: '/images/savernet.jpg',
+        link: 'https://photos.app.goo.gl/HDbXTYrqUWseijCJ6'
+    },
 ]

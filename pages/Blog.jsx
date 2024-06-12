@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import BlogCard from '../components/BlogCard'
 import { Link } from 'react-router-dom'
 import { ContextUser } from '../utils/Context'
+import { formatDate } from '../utils/formatter'
 
 const Blog = () => {
   const { viewBlog, blogs } = ContextUser();
@@ -15,7 +16,7 @@ const Blog = () => {
             {
         blogs ? <div>
         <p className="text-4xl font-bold pb-10 text-primary">Recent Blogs</p>
-        <div className='mt-10 justify-between flex flex-wrap gap-5'>
+        <div className='mt-10 justify-center flex flex-wrap gap-10'>
           {
             blogs?.slice(0).reverse().map(blog => (
               <Link
@@ -27,6 +28,7 @@ const Blog = () => {
                   image={blog.image}
                   author={blog.postedBy}
                   content={blog.body}
+                  date={formatDate(blog.createdAt)}
                 />
               </Link>
             ))

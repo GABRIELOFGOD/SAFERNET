@@ -3,9 +3,7 @@ import toast from "react-hot-toast";
 // import { blog } from "./Constants";
 
 const Context = createContext(null);
-// const baseUrl = 'http://localhost:3000'
 const baseUrl = 'https://safernet-v1.vercel.app'
-// const baseUrl = 'https://api.thesafernet.org'
 
 
 export const CreateUserContext = ({children}) => {
@@ -57,7 +55,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
             if(!username) location.assign('/admin/login')
         }
 
@@ -92,7 +90,7 @@ export const CreateUserContext = ({children}) => {
         if(res.ok){
             setUsername(response.user)
             location.assign('/dashboard/blog')
-            console.log(username)
+            // console.log(username)
         }
     }
 
@@ -107,7 +105,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
         }
         if(res.ok){
             setBlogs(response)
@@ -135,7 +133,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
         }
 
         if(res.ok){
@@ -158,11 +156,11 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
         }
         if(res.ok){
             setBlog(response)
-            console.log(response)
+            // console.log(response)
         }
     }
 
@@ -235,7 +233,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
         }
         if(res.ok){
             setEvent(response)
@@ -292,7 +290,7 @@ export const CreateUserContext = ({children}) => {
                 setInformation('')
                 setUrl('')
                 setReportLoading(false)
-                console.log(response)
+                // console.log(response)
             }
         }
 
@@ -321,7 +319,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            console.log(response)
+            // console.log(response)
         }
 
         if(res.ok){
@@ -381,7 +379,7 @@ export const CreateUserContext = ({children}) => {
 
         if(res.ok){
             setCampaign(response.allCampaign)
-            console.log(response.allCampaign)
+            // console.log(response.allCampaign)
         }
     }
 

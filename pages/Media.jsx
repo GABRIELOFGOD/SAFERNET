@@ -21,7 +21,7 @@ const Media = () => {
   ]
 
   return (
-    <div className='py-12 bg-secondary'>
+    <div className='py-12 px-6 bg-secondary'>
       <p className="text-4xl text-primary mb-10 text-center font-bold">Photos & Videos</p>
       <div className="md:flex-row flex gap-5 px-6 md:px-32 flex-col">
           <Link className={`rounded-lg wow relative overflow-hidden`} to={'photo'}>
