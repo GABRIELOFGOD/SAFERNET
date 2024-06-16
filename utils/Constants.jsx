@@ -89,11 +89,11 @@ export const ourProjects = [
         label: 'BBYDI',
         path: 'https://thebrainbuilders.org'
     },
-    {
-        id: 3,
-        label: 'BBYDI',
-        path: 'https://thebrainbuilders.org'
-    },
+    // {
+    //     id: 3,
+    //     label: 'BBYDI',
+    //     path: 'https://thebrainbuilders.org'
+    // },
     {
         id: 4,
         label: 'Donate',

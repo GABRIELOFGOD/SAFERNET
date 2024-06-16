@@ -4,6 +4,7 @@ import { ContextUser } from '../utils/Context';
 import { IoArrowBack } from "react-icons/io5";
 import { convertTextToHTML } from '../utils/TextConverter';
 import { formatDate } from '../utils/formatter';
+import { Helmet } from 'react-helmet';
 // import './styles.css'; // Ensure the CSS file is imported
 
 const Details = () => {
@@ -25,17 +26,25 @@ const Details = () => {
 
   return (
     <div className='md:px-52 px-6 py-12'>
+      <Helmet>
+        <title>{blog?.theBlog.title}</title>
+        <meta name="description" content={blog?.theBlog.postedBy} />
+        <meta property="og:title" content={blog?.theBlog.title} />
+        <meta property="og:description" content={blog?.theBlog.body} />
+        <meta property="og:image" content={blog?.theBlog.image} />
+        <meta property="og:url" content={`https://thesafernet.org/details/${blog?.theBlog._id}`} />
+      </Helmet>
       <Link to='/blog' className="flex w-fit pb-3 gap-3">
         <IoArrowBack className='my-auto' />
         <p className="semi-bold">Back</p>
       </Link>
       {blog ? (
         <div>
-          <p className="md:text-3xl text-2xl capitalize mb-5 font-bold text-black">{blog.theBlog.title}</p>
-          {blog.theBlog.image && <img src={blog.theBlog.image} alt="blog Img" />}
+          <p className="md:text-3xl text-2xl capitalize mb-5 font-bold text-black">{blog?.theBlog.title}</p>
+          {blog?.theBlog.image && <img src={blog?.theBlog.image} alt="blog Img" />}
           <div className="flex justify-between mt-5 md:mt-10 gap-5 md:gap-10">
-            {blog.theBlog.postedBy && <p className="text-[15px] pl-6 font-mono py-2 text-gray-600">Posted by: {blog.theBlog.postedBy}</p>}
-            <p className='mr-10 my-auto text-neutral-700'>{formatDate(blog.theBlog.createdAt)}</p>
+            {blog.theBlog.postedBy && <p className="text-[15px] pl-6 font-mono py-2 text-gray-600">Posted by: {blog?.theBlog.postedBy}</p>}
+            <p className='mr-10 my-auto text-neutral-700'>{formatDate(blog?.theBlog.createdAt)}</p>
           </div>
           <div className='flex flex-col gap-1'>
             {htmlContent.map((paragraph, i) => (
