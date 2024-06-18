@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { ContextUser } from '../utils/Context'
 import { useParams } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 const CampaignDetails = () => {
   const { id } = useParams()

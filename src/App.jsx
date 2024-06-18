@@ -15,6 +15,7 @@ import Contact from '../pages/Contact'
 import Loader from '../components/Loader'
 import { CreateUserContext } from '../utils/Context'
 import NotFound from '../pages/NotFound'
+import { HelmetProvider } from 'react-helmet-async'
 const LazyHome = lazy(() => import('../pages/Home'))
 const LazyAbout = lazy(() => import('../pages/About'))
 const LazyStake = lazy(() => import('../pages/StackHolder'))
@@ -34,7 +35,10 @@ const LazyVideo = lazy(() => import('../pages/Videos'));
 const LazyPhoto = lazy(() => import('../pages/Photo'));
 const LazyMedia = lazy(() => import('../pages/Media'));
 const LazyCampaignDetails = lazy(() => import('../pages/CampaignDetails'));
-const LazyEducation = lazy(() => import('../pages/Education'))
+const LazyEducation = lazy(() => import('../pages/Education'));
+
+const LazyAdminReport = lazy(() => import('../pages/AdminReport'));
+const LazyAdminFellow = lazy(() => import('../pages/AdminFellow'))
 
 const router = createBrowserRouter([
   {
@@ -127,6 +131,14 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}><LazyAdminCampaign /></Suspense>
       },
       {
+        path: 'report',
+        element: <Suspense fallback={<Loader />}><LazyAdminReport /></Suspense>
+      },
+      {
+        path: 'fellow',
+        element: <Suspense fallback={<Loader />}><LazyAdminFellow /></Suspense>
+      },
+      {
         path: 'blog/:id',
         element: <Suspense fallback={<Loader />}><AdminDetails /></Suspense>
       }
@@ -144,9 +156,11 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <CreateUserContext>
-      <RouterProvider router={router} />
-    </CreateUserContext>
+    <HelmetProvider>
+      <CreateUserContext>
+        <RouterProvider router={router} />
+      </CreateUserContext>
+    </HelmetProvider>
   )
 }
 

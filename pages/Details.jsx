@@ -4,7 +4,7 @@ import { ContextUser } from '../utils/Context';
 import { IoArrowBack } from "react-icons/io5";
 import { convertTextToHTML } from '../utils/TextConverter';
 import { formatDate } from '../utils/formatter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 // import './styles.css'; // Ensure the CSS file is imported
 
 const Details = () => {

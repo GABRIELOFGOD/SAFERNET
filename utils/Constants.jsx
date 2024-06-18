@@ -307,7 +307,13 @@ export const sideNav = [
         icon: '',
         path: 'report',
         element: 'report'
-    }
+    },
+    {
+        id: 5,
+        icon: '',
+        path: 'fellow',
+        element: 'fellow'
+    },
 ]
 
 // export const contacts = [
