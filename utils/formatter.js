@@ -32,3 +32,9 @@ export const formatDate = (dateString) => {
     return `Posted on ${date.toLocaleDateString('en-US', options)}`;
   }
 };
+
+export const urlFormatter = url => {
+  const theFormat = url.replace(/\s+/g, '-');
+  return theFormat;
+};
+

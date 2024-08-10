@@ -2,7 +2,10 @@ import React from 'react'
 
 const AdminFellow = () => {
   return (
-    <div>AdminFellow</div>
+    <div>
+      <div>FELOOW HEADER</div>
+      <div>Fellow Details</div>
+    </div>
   )
 }
 

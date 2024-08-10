@@ -3,12 +3,12 @@ import toast from "react-hot-toast";
 // import { blog } from "./Constants";
 
 const Context = createContext(null);
-// const baseUrl = 'https://safernet-v1.vercel.app'
-const baseUrl = 'http://localhost:3000'
+export const baseUrl = 'https://safernet-v1.vercel.app'
+// export const baseUrl = 'http://localhost:3000'
 
 
 export const CreateUserContext = ({children}) => {
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     const [event, setEvent] = useState(null)
     const [reportLoading, setReportLoading] = useState(false)
 
@@ -19,7 +19,7 @@ export const CreateUserContext = ({children}) => {
     const [url, setUrl] = useState('');
 
     // ==================== FOR BLOG ================== //
-    const [blogFile, setBlogFile] = useState()
+    const [blogFile, setBlogFile] = useState([])
     const [blogTitle, setBlogTitle] = useState('')
     const [blogDetails, setBlogDetails] = useState('');
     const [blogs, setBlogs] = useState(null);
@@ -65,7 +65,8 @@ export const CreateUserContext = ({children}) => {
         }
     }
 
-    const adminLogin = async (e, email, password) => {
+    const adminLogin = async (e, email, password, isLoading) => {
+        isLoading(true);
         e.preventDefault();
         const res = await fetch(`${baseUrl}/admin/login`, {
             method: 'POST',
@@ -79,18 +80,21 @@ export const CreateUserContext = ({children}) => {
         const response = await res.json()
 
         if(!res.ok){
-            setIsLoading(true);
+            // setIsLoading(true);
             toast.error(response.error, {
                 position: 'top-right',
                 className: 'text-[12px]',
                 duration: '500'
             })
+            isLoading(false);
             console.log('response', response)
         }
 
         if(res.ok){
-            setUsername(response.user)
-            location.assign('/dashboard/blog')
+            isLoading(false);
+            localStorage.setItem("username", response.user);
+            setUsername(response.user);
+            location.assign('/dashboard/blog');
             // console.log(username)
         }
     }
@@ -113,41 +117,82 @@ export const CreateUserContext = ({children}) => {
         }
     }
 
+    // const blogPoster = async (e, close) => {
+    //     e.preventDefault();
+    //     const formData = new FormData();
+
+    //     formData.append('image', blogFile);
+    //     formData.append('title', blogTitle);
+    //     formData.append('body', blogDetails);
+
+    //     const res = await fetch(`${baseUrl}/blog/post`, {
+    //         method: 'POST',
+    //         body: formData,
+    //         credentials: 'include'
+    //     })
+
+    //     const response = await res.json();
+    //     if(!res.ok){
+    //         toast.error(response.error, {
+    //             position: 'top-right',
+    //             className: 'text-[12px]',
+    //             duration: '500'
+    //         })
+    //         // console.log(response)
+    //     }
+
+    //     if(res.ok){
+    //         toast.success(response.message, {
+    //             position: 'top-right',
+    //             className: 'text-[12px]',
+    //             duration: '500'
+    //         })
+    //         close();
+    //         location.reload()
+    //     }
+    // }
+
     const blogPoster = async (e, close) => {
-        e.preventDefault();
-        const formData = new FormData();
-
-        formData.append('image', blogFile);
-        formData.append('title', blogTitle);
-        formData.append('body', blogDetails);
-
-        const res = await fetch(`${baseUrl}/blog/post`, {
-            method: 'POST',
-            body: formData,
-            credentials: 'include'
-        })
-
-        const response = await res.json();
-        if(!res.ok){
-            toast.error(response.error, {
-                position: 'top-right',
-                className: 'text-[12px]',
-                duration: '500'
-            })
-            // console.log(response)
+        try {
+            e.preventDefault();
+            const formData = new FormData();
+        
+            Array.from(blogFile).forEach((file) => {
+                formData.append('images', file);
+            });
+            formData.append('title', blogTitle);
+            formData.append('body', blogDetails);
+        
+            const res = await fetch(`${baseUrl}/blog/post`, {
+                method: 'POST',
+                body: formData,
+                credentials: 'include'
+            });
+        
+            const response = await res.json();
+            if (!res.ok) {
+                toast.error(response.error, {
+                    position: 'top-right',
+                    className: 'text-[12px]',
+                    duration: '500'
+                });
+            }
+        
+            if (res.ok) {
+                toast.success(response.message, {
+                    position: 'top-right',
+                    className: 'text-[12px]',
+                    duration: '500'
+                });
+                close();
+                location.reload();
+            }
+        } catch (error) {
+            console.log("Error from posting blog", error)
         }
-
-        if(res.ok){
-            toast.success(response.message, {
-                position: 'top-right',
-                className: 'text-[12px]',
-                duration: '500'
-            })
-            close();
-            location.reload()
-        }
-    }
-
+    };
+    
+    
     const singleBlog = async id => {
         const res = await fetch(`${baseUrl}/blog/get/${id}`, {credentials: 'include'})
         const response = await res.json();
@@ -157,7 +202,7 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
-            // console.log(response)
+            console.log(response)
         }
         if(res.ok){
             setBlog(response)
@@ -464,6 +509,7 @@ export const CreateUserContext = ({children}) => {
                 publication,
                 blogPoster,
                 blogDetails,
+                blogFile,
                 setBlogFile,
                 blogTitle,
                 setBlogTitle,

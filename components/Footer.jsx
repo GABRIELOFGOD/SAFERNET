@@ -19,7 +19,7 @@ const Footer = () => {
           }
         </div>
       </div>
-      <div className='ml-20 flex-1'>
+      <div className='md:ml-20 flex-1'>
         <p className="text-white font-semibold mb-5 text-xl">Our links</p>
         <div className='flex link flex-col gap-3'>
           {

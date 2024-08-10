@@ -16,6 +16,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+h2{
+    font-size: 25px;
+    font-weight: 500;
+}
+
 html, body{
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -101,9 +106,40 @@ html, body{
 }
 
 .subtitle {
-    font-size: 1.45em; /* Adjust size as needed */
+    font-size: 1.40em; /* Adjust size as needed */
     font-weight: 600; /* Semibold */
     display: block; /* Ensure it behaves like a block element */
-    /* margin-top: 10px; */
-    margin-bottom: -50px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.blog-content-img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+.bgimg{
+    background: url("images/h1.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.bgimg2{
+    background: url("images/h2.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.bgimg3{
+    background: url("images/h3.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
 }

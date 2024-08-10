@@ -314,6 +314,12 @@ export const sideNav = [
         path: 'fellow',
         element: 'fellow'
     },
+    {
+        id: 6,
+        icon: '',
+        path: 'media',
+        element: 'media'
+    },
 ]
 
 // export const contacts = [
@@ -344,15 +350,15 @@ export const photos = [
         cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708386655/safernet/WSD_44_of_111_skjzls.jpg',
         link: 'https://photos.app.goo.gl/6razmiqrpfZTmeZ59'
     },
-    {
-        id: 2,
-        title: 'Yvote naija',
-        cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708387627/safernet/DSC_0049_ekkgfp.jpg',
-        // link: 
-    },
+    // {
+    //     id: 2,
+    //     title: 'Yvote naija',
+    //     cover: 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1708387627/safernet/DSC_0049_ekkgfp.jpg',
+    //     // link: 
+    // },
     {
         id: 3,
-        title: 'Safe School Education',
+        title: 'Safe School Initiative: funded by dRPC',
         cover: '/images/savernet.jpg',
         link: 'https://photos.app.goo.gl/HDbXTYrqUWseijCJ6'
     },

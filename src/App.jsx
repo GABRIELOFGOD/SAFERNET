@@ -38,7 +38,8 @@ const LazyCampaignDetails = lazy(() => import('../pages/CampaignDetails'));
 const LazyEducation = lazy(() => import('../pages/Education'));
 
 const LazyAdminReport = lazy(() => import('../pages/AdminReport'));
-const LazyAdminFellow = lazy(() => import('../pages/AdminFellow'))
+const LazyAdminFellow = lazy(() => import('../pages/AdminFellow'));
+const LazyAdminMedia = lazy(() => import('../pages/AdminMedia'));
 
 const router = createBrowserRouter([
   {
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
       {
         path: 'fellow',
         element: <Suspense fallback={<Loader />}><LazyAdminFellow /></Suspense>
+      },
+      {
+        path: 'media',
+        element: <Suspense fallback={<Loader />}><LazyAdminMedia /></Suspense>
       },
       {
         path: 'blog/:id',

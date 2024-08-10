@@ -5,6 +5,19 @@ import Abuse from '../components/Abuse'
 import { ContextUser } from '../utils/Context'
 import { Link } from 'react-router-dom'
 import BlogCard from '../components/BlogCard'
+import { urlFormatter } from '../utils/formatter'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay } from 'swiper/modules';
+
+// import SwiperCore, {Autoplay, Pagination, Navigation } from 'swiper';
+// SwiperCore.use([Autoplay, Pagination, Navigation]);
+
+
 const heroeImg = '/images/homeHero.jpg'
 const crush = 'https://res.cloudinary.com/dhzqi5gqy/image/upload/v1706563649/safernet/crush_llslrd.jpg'
 const consult = '/images/contact.jpg'
@@ -21,13 +34,51 @@ const Home = () => {
 
   return (
     <div>
-      <div className='md:grid grid-cols-2'>
-        <div className='bg-primary text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24'>
-          <p className="text-4xl font-bold">Safety in the Digital Realm, Societal Rights</p>
-          <p className="">Our goal is to diminish digital disparities by shaping a digital world that is safer and more secure, especially for women and children.</p>
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={10}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
+        allowTouchMove={false}
+        slidesPerView="auto"
+        pagination={{
+          clickable: true,
+        }}
+        loop
+        // navigation={true}
+        className="mySwiper"
+      >
+      <SwiperSlide>
+        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg'>
+          <div className='absolute inset-0 bg-primary opacity-80'></div>
+          <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
+            <p className="md:text-5xl text-3xl font-bold">Safety in the Digital Realm, Societal Rights</p>
+            <p className='md:text-xl text-base w-full md:w-[800px]'>We aim to enhance digital inclusion by creating a more accessible and supportive online space, particularly for vulnerable groups.</p>
+          </div>
         </div>
-        <img src={heroeImg} alt="" />
-      </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg2'>
+          <div className='absolute inset-0 bg-primary opacity-80'></div>
+          <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
+            <p className="md:text-5xl text-3xl font-bold">Promoting Cybersecurity and Digital Equity</p>
+            <p className='md:text-xl text-base w-full md:w-[800px]'>Our goal is to diminish digital disparities by shaping a digital world that is safer and more secure, especially for women and children.</p>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg3'>
+          <div className='absolute inset-0 bg-primary opacity-80'></div>
+          <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
+            <p className="md:text-5xl text-3xl font-bold">Advancing Online Protection and Community Welfare</p>
+            <p className='md:text-xl text-base w-full md:w-[800px]'>Our mission is to bridge the digital divide by fostering an inclusive and protective online environment for all.</p>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
       <div className='md:grid bg-secondary py-12 grid-cols-2'>
         <p className="text-3xl pb-5 md:pb-0 px-6 md:px-20 my-auto text-primary font-bold">What's the Emphasis on Online Safety and Equality?</p>
         <p className='md:px-20 px-6 md:w-[600px] font-semibold'>Neglecting the reduction of digital inequalities through the promotion of inclusion, online safety, and rights—particularly for vulnerable groups—poses the risk of intensifying disparities, creating new digital divides, and/or worsening those that have persisted over the years.</p>
@@ -52,7 +103,7 @@ const Home = () => {
         <div className='flex flex-wrap px-10 md:px-28 justify-center gap-10'>
           {
             blogs?.slice().reverse().slice(0, 3).map((card, i) => (
-              <Link to={`/details/${card?._id}`} key={i}>
+              <Link to={`/details/${urlFormatter(card.title)}`} key={i}>
                 <BlogCard
                   topic={card.title}
                   image={card.image}
