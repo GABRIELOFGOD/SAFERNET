@@ -52,7 +52,7 @@ const Home = () => {
         className="mySwiper"
       >
       <SwiperSlide>
-        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg'>
+        <div className='relative w-full h-fit md:h-[90vh] bg-[url("images/h1.JPG")] bg-cover bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24'>
           <div className='absolute inset-0 bg-primary opacity-80'></div>
           <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
             <p className="md:text-5xl text-3xl font-bold">Safety in the Digital Realm, Societal Rights</p>
@@ -61,7 +61,7 @@ const Home = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg2'>
+        <div className='relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24  bg-[url("images/h2.JPG")]'>
           <div className='absolute inset-0 bg-primary opacity-80'></div>
           <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
             <p className="md:text-5xl text-3xl font-bold">Promoting Cybersecurity and Digital Equity</p>
@@ -70,7 +70,7 @@ const Home = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className='relative w-full h-fit md:h-[90vh] bg-contain bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24 bgimg3'>
+        <div className='relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24  bg-[url("images/h3.JPG")]'>
           <div className='absolute inset-0 bg-primary opacity-80'></div>
           <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
             <p className="md:text-5xl text-3xl font-bold">Advancing Online Protection and Community Welfare</p>
