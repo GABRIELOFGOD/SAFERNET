@@ -60,10 +60,7 @@ const AdminBlog = () => {
         </div>
         :<p className="text-4xl font-bold text-center text-gray-400">No Blog posted</p>
       }
-      <Poster
-        children={<BlogPost close={closer} />}
-        show={show}
-      />
+      <BlogPost open={show} close={closer} />
       <Poster
         children={<EditBlog
             title={editTitle}

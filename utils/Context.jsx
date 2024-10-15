@@ -202,11 +202,13 @@ export const CreateUserContext = ({children}) => {
                 className: 'text-[12px]',
                 duration: '500'
             })
+            if(response.error == "No Blog found") location.assign('/blog')
             console.log(response)
         }
         if(res.ok){
-            setBlog(response)
-            // console.log(response)
+            // let blogContent = 
+            setBlog(response.theBlog)
+            console.log("response", response.theBlog)
         }
     }
 

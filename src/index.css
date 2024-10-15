@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -121,7 +122,7 @@ html, body{
   }
 
 .bgimg{
-    background: url("images/h1.JPG");
+    background: url("images/h1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -129,7 +130,7 @@ html, body{
 }
 
 .bgimg2{
-    background: url("images/h2.JPG");
+    background: url("images/h2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -137,9 +138,13 @@ html, body{
 }
 
 .bgimg3{
-    background: url("images/h3.JPG");
+    background: url("images/h3.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover;        
     width: 100%;
+}
+
+.blogPage{
+    font-family: "Oswald", sans-serif;
 }

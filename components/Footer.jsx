@@ -40,7 +40,9 @@ const Footer = () => {
         </div>
       </div>
       <div className='flex-1'>
-        <Link to='/' className={`md:text-4xl text-3xl my-auto font-extrabold pb-5`}>safernet</Link>
+        <Link to='/' className={`md:text-4xl text-3xl my-auto font-extrabold pb-5`}>
+          <img className='h-[50px] mb-5' src='/svgs/logo-white.svg' />
+        </Link>
         <div className="flex gap-5">
           <div className='flex gap-1'>
             <p>&copy;</p>

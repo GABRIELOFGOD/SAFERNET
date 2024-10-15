@@ -13,6 +13,7 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
+import SimpleSlider from '../components/Swiperrer'
 
 // import SwiperCore, {Autoplay, Pagination, Navigation } from 'swiper';
 // SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -34,7 +35,7 @@ const Home = () => {
 
   return (
     <div>
-      <Swiper
+      {/* <Swiper
         modules={[Autoplay]}
         spaceBetween={10}
         centeredSlides={true}
@@ -78,7 +79,8 @@ const Home = () => {
           </div>
         </div>
       </SwiperSlide>
-    </Swiper>
+    </Swiper> */}
+      <SimpleSlider />
       <div className='md:grid bg-secondary py-12 grid-cols-2'>
         <p className="text-3xl pb-5 md:pb-0 px-6 md:px-20 my-auto text-primary font-bold">What's the Emphasis on Online Safety and Equality?</p>
         <p className='md:px-20 px-6 md:w-[600px] font-semibold'>Neglecting the reduction of digital inequalities through the promotion of inclusion, online safety, and rights—particularly for vulnerable groups—poses the risk of intensifying disparities, creating new digital divides, and/or worsening those that have persisted over the years.</p>
@@ -119,7 +121,7 @@ const Home = () => {
       <div className='bg-secondary flex flex-col-reverse md:grid grid-cols-2 p-6 gap-5 md:py-14 md:px-28'>
         <div className='my-auto md:px-6 '>
           <p className="text-4xl font-bold pb-5 text-primary">Consulting</p>
-          <p className='font-semibold'>We provide support to internet-based organizations, tech-driven businesses, civil society organizations, and government partners in the following domains:</p>
+          <p className='font-semibold'>We provide support to internet-based organizations, tech-driven businesses, civil society organizations, and government partners.</p>
         </div>
         <img src={consult} alt="consult" />
       </div>
