@@ -65,7 +65,7 @@
 // export default Details;
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ContextUser } from '../utils/Context';
+import { baseUrl, ContextUser } from '../utils/Context';
 import { IoArrowBack } from "react-icons/io5";
 import { formatDate } from '../utils/formatter';
 import { Helmet } from 'react-helmet-async';
@@ -73,30 +73,39 @@ import DOMPurify from 'dompurify';
 import { convertTextToHTML } from '../utils/TextConverter';
 import BlogInterractivity from '../components/blog/BlogInterractivity';
 import BlogContentBody from '../components/blog/BlogContentBody';
+import useFetchBlog from '../hooks/BlogHook';
 
 const Details = () => {
   const { id } = useParams();
-  const { singleBlog, blog, loading } = ContextUser();
-  const [htmlContent, setHtmlContent] = useState('');
-  // const [blogJsonFyer, setBlogJsonFyer] = useState('');
+  const { data, loading, error } = useFetchBlog(`${baseUrl}/blog/get/${id}`);
+  const [blogBody, setBlogBody] = useState(null);
+  const [blog, setBlog] = useState(null);
+  const [htmlContent, setHtmlContent] = useState([]);
 
   useEffect(() => {
-    singleBlog(id);
-    blog && console.log("blog here", blog?.body);
-
-  }, [id]);
-  
-  const jsonFyer = async (text) => {
-    return JSON.parse(text);
-  }
+    if (data) {
+      setBlog(data.theBlog);
+      console.log(data.theBlog.body);
+      try {
+        setBlogBody(JSON.parse(data.theBlog.body));
+      } catch (error) {
+        console.error("Failed to parse blog body:", error);
+        const paragraphs = data.theBlog.body.split('\n').filter(paragraph => paragraph.trim() !== '');
+        const convertedParagraphs = paragraphs.map(paragraph => convertTextToHTML(paragraph));
+        setHtmlContent(convertedParagraphs);
+      }
+    }
+  }, [data]);
 
   // useEffect(() => {
-  //   // if (blog?.body) {
-  //   //   const sanitizedHtml = convertTextToHTML(blog.body);  // Use the updated function to sanitize and format the HTML
-  //   //   setHtmlContent(sanitizedHtml);
-  //   // }
-  //   console.log(blog)
-  // }, [blog]);
+  //   const fetchBlog = async () => {
+  //     await singleBlog(id);
+  //     setBlogBody(blog?.theBlog.body);
+  //     console.log(blog);
+  //   };
+
+  //   fetchBlog();
+  // }, [id, blog]);
 
   const navigate = useNavigate();
 
@@ -111,19 +120,31 @@ const Details = () => {
         <meta property="og:url" content={`https://thesafernet.org/details/${blog?.title}`} />
       </Helmet>
       <div className='md:w-[600px] w-full flex  flex-col gap-3'>
-        {/* <img src={blog?.image} alt="" />
-        <p className="font-bold text-2xl">{blog?.title}</p>
-        <div className="flex justify-between gap-5 md:gap-10">
+        <img src={blog?.image} alt="" />
+        <p className="font-bold text-4xl">{blog?.title}</p>
+        <div className="flex justify-between gap-5 md:gap-10 mb-10">
           {blog?.postedBy && <p className="text-[15px] pl-3 font-mono py-2 text-gray-600">Posted by: {blog?.postedBy}</p>}
           <p className='mr-5 my-auto text-neutral-700'>{formatDate(blog?.createdAt)}</p>
-        </div> */}
+        </div>
         <div>
           <BlogInterractivity />
+          {htmlContent.length?
+            htmlContent.map((paragraph, i) => (
+              <p key={i} className=' text-[16px] break-words  pt-5 -pb-5' dangerouslySetInnerHTML={{ __html: paragraph.trim() }}></p>
+            )):
+            blogBody && <BlogContentBody block={blogBody.blocks} />
+          }
+          {/* {blogBody && <BlogContentBody block={blogBody.blocks} />} */}
           {/* {
             blog?.theBlog.body.map((block, i) => (
               <BlogContentBody block={blogJsonFyer} />))
           } */}
           <BlogInterractivity />
+
+          <div>
+            <p className="text-3xl font-bold">"Comments"</p>
+            <p className="font-semibold text-neutral-400">Cool feature huh? coming soon!!</p>
+          </div>
         </div>
       </div>
     </div>

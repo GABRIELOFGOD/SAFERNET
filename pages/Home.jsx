@@ -5,7 +5,7 @@ import Abuse from '../components/Abuse'
 import { ContextUser } from '../utils/Context'
 import { Link } from 'react-router-dom'
 import BlogCard from '../components/BlogCard'
-import { urlFormatter } from '../utils/formatter'
+import { formatDate, urlFormatter } from '../utils/formatter'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css';
@@ -102,15 +102,16 @@ const Home = () => {
       </div>
       <div className=' py-10'>
         <p className='px-20 flex text-4xl font-semibold text-primary my-5'>Recent Blog</p>
-        <div className='flex flex-wrap px-10 md:px-28 justify-center gap-10'>
+        <div className='flex flex-col px-10 md:px-28 justify-center gap-10'>
           {
-            blogs?.slice().reverse().slice(0, 3).map((card, i) => (
+            blogs?.slice().reverse().slice(0, 5).map((card, i) => (
               <Link to={`/details/${urlFormatter(card.title)}`} key={i}>
                 <BlogCard
                   topic={card.title}
                   image={card.image}
                   author={card.postedBy}
                   content={card.body}
+                  date={formatDate(card.createdAt)}
                 />
               </Link>
             ))

@@ -4,6 +4,11 @@ export const wrap = (body) => {
 }
 
 export const titleTrunc = (title) => {
-  if(title.length < 50) return title
-  return(title.substring(0, 50)+'...')
+  if(title.length < 30) return title
+  return(title.substring(0, 30)+'...')
 }
+
+// export const titleTruncMob = (title) => {
+//   if(title.length < 50) return title
+//   return(title.substring(0, 30)+'...')
+// }
