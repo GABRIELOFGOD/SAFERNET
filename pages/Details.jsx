@@ -74,6 +74,7 @@ import { convertTextToHTML } from '../utils/TextConverter';
 import BlogInterractivity from '../components/blog/BlogInterractivity';
 import BlogContentBody from '../components/blog/BlogContentBody';
 import useFetchBlog from '../hooks/BlogHook';
+import RelatedContents from '../components/blog/RelatedContents';
 
 const Details = () => {
   const { id } = useParams();
@@ -85,7 +86,7 @@ const Details = () => {
   useEffect(() => {
     if (data) {
       setBlog(data.theBlog);
-      console.log(data.theBlog.body);
+      // console.log(data.theBlog.body);
       try {
         setBlogBody(JSON.parse(data.theBlog.body));
       } catch (error) {
@@ -97,20 +98,10 @@ const Details = () => {
     }
   }, [data]);
 
-  // useEffect(() => {
-  //   const fetchBlog = async () => {
-  //     await singleBlog(id);
-  //     setBlogBody(blog?.theBlog.body);
-  //     console.log(blog);
-  //   };
-
-  //   fetchBlog();
-  // }, [id, blog]);
-
   const navigate = useNavigate();
 
   return (
-    <div className='w-full flex flex-col items-center justify-center px-3 py-12 blogPage'>
+    <div className='w-full flex flex-col md:flex-row gap-20 md:px-20 justify-center px-3 py-12 blogPage'>
       <Helmet>
         <title>{blog?.title}</title>
         <meta name="description" content={blog?.title} />
@@ -119,7 +110,7 @@ const Details = () => {
         <meta property="og:image" content={blog?.image} />
         <meta property="og:url" content={`https://thesafernet.org/details/${blog?.title}`} />
       </Helmet>
-      <div className='md:w-[600px] w-full flex  flex-col gap-3'>
+      <div className='md:w-[700px] w-full flex md:flex-[3] flex-col gap-3'>
         <img src={blog?.image} alt="" />
         <p className="font-bold text-4xl">{blog?.title}</p>
         <div className="flex justify-between gap-5 md:gap-10 mb-10">
@@ -147,6 +138,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <RelatedContents blog={blog} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Blog = () => {
 
   useEffect(() => {
     viewBlog();
-  }, [])
+  }, []);
 
   return (
     <div className="bg-secondary flex justify-center">

@@ -2,7 +2,7 @@ import { list } from 'postcss';
 import React from 'react'
 
 const BlogContentBody = ({block}) => {
-  block && console.log("block", block);
+  // block && console.log("block", block);
   return (
     <div className='gap-5 flex flex-col text-neutral-800'>
       {block?.map((data, i) => (

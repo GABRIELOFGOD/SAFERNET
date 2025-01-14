@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import MissionCard from '../components/MissionCard'
-import { missionCard } from '../utils/Constants'
+import { blog, missionCard } from '../utils/Constants'
 import Abuse from '../components/Abuse'
 import { ContextUser } from '../utils/Context'
 import { Link } from 'react-router-dom'
@@ -102,20 +102,35 @@ const Home = () => {
       </div>
       <div className=' py-10'>
         <p className='px-20 flex text-4xl font-semibold text-primary my-5'>Recent Blog</p>
-        <div className='flex flex-col px-10 md:px-28 justify-center gap-10'>
-          {
-            blogs?.slice().reverse().slice(0, 5).map((card, i) => (
+        <div className='flex flex-col md:flex-row gap-10 md:px-20'>
+          <div className='flex-[2] h-[400px] relative shadow-md overflow-hidden'>
+            {blogs?.slice().reverse().slice(0, 1).map((card, i) => (
               <Link to={`/details/${urlFormatter(card.title)}`} key={i}>
-                <BlogCard
-                  topic={card.title}
-                  image={card.image}
-                  author={card.postedBy}
-                  content={card.body}
-                  date={formatDate(card.createdAt)}
-                />
+                <div className='h-full overflow-hidden'><img className='h-full w-full' src={card.image} alt={card.title} /></div>
+                <div className="absolute bg-primary bg-opacity-20 h-full w-full top-0 left-0">
+                  <div className='absolute items-baseline justify-end p-10 left-0 w-full h-full flex flex-col gap-5 text-white'>
+                    <p className='text-3xl font-semibold'>{card.title}</p>
+                    <p className='text-sm font-semibold'>{formatDate(card.createdAt)}</p>
+                  </div>
+                </div>
               </Link>
-            ))
-          }
+            ))}
+          </div>
+          <div className='flex flex-col flex-[2] h-fit px-5 justify-center gap-10'>
+            {
+              blogs?.slice().reverse().slice(1, 4).map((card, i) => (
+                <Link to={`/details/${urlFormatter(card.title)}`} key={i}>
+                  <BlogCard
+                    topic={card.title}
+                    image={card.image}
+                    author={card.postedBy}
+                    content={card.body}
+                    date={formatDate(card.createdAt)}
+                  />
+                </Link>
+              ))
+            }
+          </div>
         </div>
         <div className="w-full flex justify-end items-end"><Link to='/blog' className="hover:scale-x-105 duration-200 font-semibold py-3 text-sm px-8 bg-primary text-white mx-20">Read more...</Link></div>
       </div>
