@@ -3,8 +3,8 @@ import toast from "react-hot-toast";
 // import { blog } from "./Constants";
 
 const Context = createContext(null);
-export const baseUrl = 'https://safernet-v1.vercel.app'
-// export const baseUrl = 'http://localhost:3000'
+// export const baseUrl = 'https://safernet-v1.vercel.app';
+export const baseUrl = 'http://localhost:3000';
 
 
 export const CreateUserContext = ({children}) => {

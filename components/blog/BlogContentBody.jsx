@@ -6,7 +6,7 @@ const BlogContentBody = ({block}) => {
   return (
     <div className='gap-5 flex flex-col text-neutral-800'>
       {block?.map((data, i) => (
-        data.type == "paragraph" ? <p key={i} dangerouslySetInnerHTML={{ __html: data.data.text }}></p> :
+        data.type == "paragraph" ? <p key={i} className='md:text-lg text-base' dangerouslySetInnerHTML={{ __html: data.data.text }}></p> :
         data.type == "list" ? data.data.style == "ordered" ?
         <ol key={i} className='list-decimal pl-5'>
           {data.data.items.map((list, i) => (

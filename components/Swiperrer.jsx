@@ -65,6 +65,15 @@ function SimpleSlider() {
               </div>
             </div>
           </div>
+          <div>
+            <div className='relative w-full h-fit md:h-[90vh] bg-cover bg-center text-white flex flex-col items-center justify-center gap-5 px-6 py-12 md:px-24  bg-[url("/images/5.png")]'>
+              <div className='absolute inset-0 bg-primary opacity-80'></div>
+              <div className='relative justify-center items-center flex flex-col gap-5 z-10 text-center'>
+                <p className="md:text-5xl text-3xl font-bold">AI Colaboration for Digital Safety</p>
+                <p className='md:text-xl text-base w-full md:w-[800px]'>We educate, engage and collaborate for a safer and Beneficial Artificial Intelligence and Internet as a whole</p>
+              </div>
+            </div>
+          </div>
           {/* <div>
             <h3>4</h3>
           </div>

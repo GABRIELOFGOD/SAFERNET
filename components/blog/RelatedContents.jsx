@@ -8,7 +8,7 @@ const RelatedContents = ({ blog }) => {
 
   useEffect(() => {
     viewBlog();
-  }, []);
+  }, [blog]);
 
   if (!blogs || !blog) {
     return <div className="flex justify-center items-center h-64"><span className="text-xl font-semibold">Loading...</span></div>;

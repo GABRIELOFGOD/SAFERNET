@@ -26,22 +26,22 @@ export const social = [
     {
         id: 1,
         icon: <IoLogoFacebook />,
-        path: ''
+        path: 'https://web.facebook.com/profile.php?id=61562212101563'
     },
     {
         id: 2,
         icon: <IoLogoInstagram />,
-        path: ''
+        path: 'https://www.instagram.com/safernetinitiative'
     },
     {
         id: 3,
         icon: <FaTwitter />,
-        path: ''
+        path: 'https://x.com/thesafernet'
     },
     {
         id: 4,
         icon: <IoLogoLinkedin />,
-        path: ''
+        path: 'https://www.linkedin.com/showcase/safernet-initiative'
     },
 ]
 

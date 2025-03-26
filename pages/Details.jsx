@@ -75,6 +75,7 @@ import BlogInterractivity from '../components/blog/BlogInterractivity';
 import BlogContentBody from '../components/blog/BlogContentBody';
 import useFetchBlog from '../hooks/BlogHook';
 import RelatedContents from '../components/blog/RelatedContents';
+import CommentSection from '../components/blog/CommentSection';
 
 const Details = () => {
   const { id } = useParams();
@@ -118,7 +119,7 @@ const Details = () => {
           <p className='mr-5 my-auto text-neutral-700'>{formatDate(blog?.createdAt)}</p>
         </div>
         <div>
-          <BlogInterractivity />
+          <BlogInterractivity blog={blog} />
           {htmlContent.length?
             htmlContent.map((paragraph, i) => (
               <p key={i} className=' text-[16px] break-words  pt-5 -pb-5' dangerouslySetInnerHTML={{ __html: paragraph.trim() }}></p>
@@ -130,11 +131,10 @@ const Details = () => {
             blog?.theBlog.body.map((block, i) => (
               <BlogContentBody block={blogJsonFyer} />))
           } */}
-          <BlogInterractivity />
+          <BlogInterractivity blog={blog} />
 
-          <div>
-            <p className="text-3xl font-bold">"Comments"</p>
-            <p className="font-semibold text-neutral-400">Cool feature huh? coming soon!!</p>
+          <div id='comments'>
+            <CommentSection blog={blog} />
           </div>
         </div>
       </div>
