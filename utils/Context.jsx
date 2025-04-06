@@ -11,6 +11,7 @@ export const CreateUserContext = ({children}) => {
     // const [isLoading, setIsLoading] = useState(false);
     const [event, setEvent] = useState(null)
     const [reportLoading, setReportLoading] = useState(false)
+    const [fellow, setFellow] = useState(null);
 
     const [file, setFile] = useState();
     const [report, setReport] = useState('');
@@ -527,7 +528,8 @@ export const CreateUserContext = ({children}) => {
                 setEditTitle,
                 deleteLoad,
                 blogDeleter,
-                getSingleCampaign, singleCampaign
+                getSingleCampaign, singleCampaign,
+                fellow, setFellow
             }}
         >
             {children}

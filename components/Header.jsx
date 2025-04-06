@@ -65,6 +65,11 @@ const Header = () => {
           title='publications'
           lists={[
             {
+              id: 1,
+              text: "publications",
+              path: 'publications'
+            },
+            {
               id: 2,
               text: 'blog',
               path: 'blog'

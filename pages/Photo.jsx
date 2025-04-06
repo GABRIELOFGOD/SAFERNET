@@ -3,12 +3,11 @@ import toast from 'react-hot-toast';
 // import { photos } from '../utils/Constants'
 import { Link } from 'react-router-dom'
 import Loader from '../components/Loader';
+import { baseUrl } from '../utils/Context';
 
 const Photo = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const baseUrl = 'https://safernet-v1.vercel.app'
-  const localUrl = 'http://localhost:3000'
 
   const photoFetcher = async () => {
     setIsLoading(true);

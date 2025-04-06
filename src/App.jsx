@@ -16,6 +16,7 @@ import Loader from '../components/Loader'
 import { CreateUserContext } from '../utils/Context'
 import NotFound from '../pages/NotFound'
 import { HelmetProvider } from 'react-helmet-async'
+import { Toaster } from 'react-hot-toast'
 const LazyHome = lazy(() => import('../pages/Home'))
 const LazyAbout = lazy(() => import('../pages/About'))
 const LazyStake = lazy(() => import('../pages/StackHolder'))
@@ -40,6 +41,11 @@ const LazyEducation = lazy(() => import('../pages/Education'));
 const LazyAdminReport = lazy(() => import('../pages/AdminReport'));
 const LazyAdminFellow = lazy(() => import('../pages/AdminFellow'));
 const LazyAdminMedia = lazy(() => import('../pages/AdminMedia'));
+
+const LazyOnboarding = lazy(() => import("../pages/fellow/Onboarding"));
+const LazyCompleteOnboarding = lazy(() => import("../pages/fellow/CompleteOnboarding"));
+const LazyFellowDashboard = lazy(() => import("../pages/fellow/FellowDashboard"));
+const LazyFellowLogin = lazy(() => import("../pages/fellow/FellowLogin"));
 
 const router = createBrowserRouter([
   {
@@ -105,6 +111,14 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}><LazyDetails /></Suspense>
       },
       {
+        path: "/onboarding",
+        element: <Suspense fallback={<Loader />}><LazyOnboarding /></Suspense>
+      },
+      {
+        path: "/complete-onboarding",
+        element: <Suspense fallback={<Loader />}><LazyCompleteOnboarding /></Suspense>
+      },
+      {
         path: 'campaign/:id',
         element: <Suspense fallback={<Loader />}><LazyCampaignDetails /></Suspense>
       }
@@ -114,6 +128,15 @@ const router = createBrowserRouter([
     path: '/admin/login',
     element: <Suspense fallback={<Loader />}><LazyLogin /></Suspense>,
     // children={}
+  },
+  {
+    path: '/sign-in',
+    element: <Suspense fallback={<Loader />}><LazyFellowLogin /></Suspense>,
+    // children={}
+  },
+  {
+    path: "fellow",
+    element: <Suspense fallback={<Loader />}><LazyFellowDashboard /></Suspense>
   },
   {
     path: 'dashboard',
@@ -164,6 +187,7 @@ const App = () => {
     <HelmetProvider>
       <CreateUserContext>
         <RouterProvider router={router} />
+        <Toaster position='top-right' />
       </CreateUserContext>
     </HelmetProvider>
   )

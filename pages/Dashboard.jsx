@@ -9,15 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     adminGetter();
-  }, [])
-
-  // if(!username) {
-  //   toast.error('login failed', {
-  //     position: 'top-right',
-  //     className: 'text-[12px]',
-  //     duration: '500'
-  //   })
-  // }
+  }, []);
 
   return (
     <div>

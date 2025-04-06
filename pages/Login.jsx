@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MdEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { ContextUser } from '../utils/Context';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import MiniLoader from '../utils/MiniLoader';
 
 const Login = () => {
@@ -10,11 +10,6 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false);
     const { adminLogin, username, adminGetter } = ContextUser();
-
-    // useEffect(() => {
-    //     const isExists = localStorage.getItem("username");
-
-    // }, [username])
 
     if(username){
         
@@ -39,7 +34,7 @@ const Login = () => {
             </div>
             <button className={` text-white hover:bg-opacity-90 duration-200 bg-primary w-full py-3 justify-center flex items-center rounded-sm text-sm`}>{isLoading ? <MiniLoader size={20} /> : "Login"}</button>
         </form>
-        <Toaster />
+        {/* <Toaster /> */}
     </div>
   )
 }
