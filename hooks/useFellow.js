@@ -49,8 +49,26 @@ const useFellow = () => {
     }
   }
 
+  const fellowProfile = async () => {
+    // const token = 
+    const request = await fetch(`${baseUrl}/fellow/profile`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("fellow")}`,
+      }
+    });
+
+    const response = await request.json();
+    if (!request.ok || response.error) {
+      throw new Error(response.error || "Unknown error occurred.");
+    }
+
+    return response;
+  }
+
   return {
-    initializeFellow
+    initializeFellow, fellowProfile
   }
   
 }

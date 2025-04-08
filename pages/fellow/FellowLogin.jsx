@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import toast from "react-hot-toast";
 import { CiLock } from "react-icons/ci"
 import { MdNumbers } from "react-icons/md"
@@ -44,6 +44,12 @@ const FellowLogin = () => {
     }
   }
 
+  useEffect(() => {
+    const token = localStorage.getItem("fellow");
+    if (token && token !== "undefined" && token !== "null") {
+      navigate("/fellow");
+    }
+  }, []);
   
   return (
     <div className='h-[100vh] md:w-[100vw] bg-primary flex items-center justify-center'>

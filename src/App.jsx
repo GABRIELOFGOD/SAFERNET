@@ -1,17 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from '../components/Layout'
-import Home from '../pages/Home'
-import About from '../pages/About'
-import StackHolder from '../pages/StackHolder'
-import Campaign from '../pages/Campaign'
-import Publications from '../pages/Publications'
-import Blog from '../pages/Blog'
-import Videos from '../pages/Videos'
-import News from '../pages/News'
 import Events from '../pages/Events'
 import GetInvolved from '../pages/GetInvolved'
-import Contact from '../pages/Contact'
 import Loader from '../components/Loader'
 import { CreateUserContext } from '../utils/Context'
 import NotFound from '../pages/NotFound'
@@ -46,6 +37,8 @@ const LazyOnboarding = lazy(() => import("../pages/fellow/Onboarding"));
 const LazyCompleteOnboarding = lazy(() => import("../pages/fellow/CompleteOnboarding"));
 const LazyFellowDashboard = lazy(() => import("../pages/fellow/FellowDashboard"));
 const LazyFellowLogin = lazy(() => import("../pages/fellow/FellowLogin"));
+const LazyFellowHome = lazy(() => import("../pages/fellow/FellowHome"));
+const LazyFellowCreateCampaign = lazy(() => import("../pages/fellow/FellowCreateCampaign"));
 
 const router = createBrowserRouter([
   {
@@ -136,7 +129,17 @@ const router = createBrowserRouter([
   },
   {
     path: "fellow",
-    element: <Suspense fallback={<Loader />}><LazyFellowDashboard /></Suspense>
+    element: <Suspense fallback={<Loader />}><LazyFellowDashboard /></Suspense>,
+    children: [
+      {
+        path: "",
+        element: <Suspense fallback={<Loader />}><LazyFellowHome /></Suspense>
+      },
+      {
+        path: "post",
+        element: <Suspense fallback={<Loader />}><LazyFellowCreateCampaign /></Suspense>
+      },
+    ]
   },
   {
     path: 'dashboard',
