@@ -1,6 +1,10 @@
+import FellowDashboardHeader from "../../components/fellow/FellowDashboardHeader"
+
 const FellowDashboard = () => {
   return (
-    <div>FellowDashboard</div>
+    <div>
+      <FellowDashboardHeader />
+    </div>
   )
 }
 export default FellowDashboard
