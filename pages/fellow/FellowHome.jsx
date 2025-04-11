@@ -3,15 +3,37 @@ import { FaImages, FaPen, FaVideo } from "react-icons/fa";
 import CampaignContainer from "../../components/campaign/CampaignContainer";
 import { ContextUser } from "../../utils/Context";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import useCampaign from "../../hooks/useCampaign";
 
 const FellowHome = () => {
   const { fellow } = ContextUser();
   const navigate = useNavigate();
+  const [campaigns, setCampaigns] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const goCreateCampaign = () => {
     navigate("post");
   };
 
+  const { getCampaigns } = useCampaign();
+
+  useEffect(() => {
+    const fetchCampaigns = async () => {
+      setLoading(true);
+      try {
+        const data = await getCampaigns();
+        const fellowCampaigns = data.allCampaign.filter(campaign => campaign.postedBy._id === fellow._id);
+        setCampaigns(fellowCampaigns);
+      } catch (error) {
+        console.error("Error fetching campaigns:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fellow && fetchCampaigns();
+  }, [fellow]);
   
   return (
     <div>
@@ -43,7 +65,7 @@ const FellowHome = () => {
             <textarea placeholder="Write about your campaign" disabled className="w-full h-[100px] border bg-primary/15 border-primary/90 p-4 rounded-md" onClick={goCreateCampaign}></textarea>
           </div>
         </div>
-        <CampaignContainer campaigns={fellow?.campaigns} />
+        <CampaignContainer campaigns={campaigns} />
       </div>
       {/* {loading ? (
         <div className="flex fixed top-0 left-0 gap-5 w-full h-screen bg-white/80 z-50 items-center justify-center">

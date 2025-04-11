@@ -11,7 +11,7 @@ const FellowDashboardHeader = ({ coverPhoto, profilePhoto }) => {
           {profilePhoto && <img src={profilePhoto} alt="" className="w-full h-full object-cover" />}
         </div>
         <button>
-          <div className="bg-gray-300/80 border border-primary/80 text-slate-900 px-4 py-2 rounded-md absolute -bottom-5 right-3 md:right-10">
+          <div className="bg-gray-300/80 font-medium gap-2 flex border border-primary/80 text-slate-900 px-4 py-2 rounded-md absolute -bottom-5 right-3 md:right-10">
             <CiEdit size={20} className="inline" />
             Edit Profile
           </div>

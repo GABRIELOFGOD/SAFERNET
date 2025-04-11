@@ -27,6 +27,7 @@ const FellowDashboard = () => {
     } catch (error) {
       console.log("Error fetching fellow profile:", error.message);
       setFellow(null);
+      localStorage.removeItem("fellow");
       navigate("/sign-in");
     } finally {
       setLoading(false);
