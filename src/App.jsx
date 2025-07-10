@@ -8,6 +8,7 @@ import { CreateUserContext } from '../utils/Context'
 import NotFound from '../pages/NotFound'
 import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from 'react-hot-toast'
+import Resources from '../pages/Resources'
 const LazyHome = lazy(() => import('../pages/Home'))
 const LazyAbout = lazy(() => import('../pages/About'))
 const LazyStake = lazy(() => import('../pages/StackHolder'))
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
       {
         path: 'make-report',
         element: <GetInvolved />
+      },
+      {
+        path: 'resources',
+        element: <Resources />
       },
       {
         path: 'contact',

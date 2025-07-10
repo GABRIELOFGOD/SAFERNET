@@ -76,6 +76,11 @@ const Header = () => {
             },
             {
               id: 3,
+              text: 'resources',
+              path: 'resources'
+            },
+            {
+              id: 4,
               text: 'campaign',
               path: 'campaign'
             }
